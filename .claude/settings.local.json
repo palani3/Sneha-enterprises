@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(npx tsc:*)",
+      "Bash(node -e \"const { Trophy, Star } = require\\(''lucide-react''\\); console.log\\(''Trophy:'', !!Trophy, ''Star:'', !!Star\\);\")",
+      "Bash(npm list:*)"
+    ]
+  }
+}

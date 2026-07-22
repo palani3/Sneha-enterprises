@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow admin or private paths if added in future
+# Disallow: /admin/
+# Disallow: /api/
+
+Sitemap: https://www.sneha-enterprises.com/sitemap.xml

@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode (Tailwind v4) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* Dark mode via .dark class on <html> (controlled by JS toggle) */
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transition: background 0.3s, color 0.3s;
+  scroll-behavior: smooth;
+}
+
+/* Smooth scroll reveal base */
+[data-gsap] { will-change: transform, opacity; }
+
+/* Hide scrollbar but keep scrollable */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #1d4ed8; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #1e40af; }
+
+/* Selection color */
+::selection { background: #1d4ed8; color: #ffffff; }
+
+/* Tailwind v4 animate utilities */
+@keyframes pulse-slow { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+.animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
+
+/* Ticker / marquee */
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.animate-ticker { animation: ticker 22s linear infinite; }
+.animate-ticker:hover { animation-play-state: paused; }
+
+/* Gradient text support */
+.gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Parallax layer — prevent layout shifts */
+.parallax-bg {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Smooth float animation for badges */
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+.animate-float { animation: float 3s ease-in-out infinite; }
+
+/* Glow pulse for CTA buttons */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(14,165,233,0.4); }
+  50%       { box-shadow: 0 0 48px rgba(14,165,233,0.75); }
+}
+.animate-glow { animation: glow-pulse 2.5s ease-in-out infinite; }
