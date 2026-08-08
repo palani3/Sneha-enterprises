@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { PAGE_SEO, SITE } from '../lib/seo.config';
+import { PAGE_SEO, SITE, breadcrumbJsonLd, SERVICES_JSON_LD, FAQ_JSON_LD } from '../lib/seo.config';
 
 const p = PAGE_SEO.services;
 
@@ -15,6 +15,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ServicesLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+const breadcrumb = breadcrumbJsonLd([
+  { name: 'Home', url: SITE.url },
+  { name: 'Services', url: `${SITE.url}/services` },
+]);
+
+export default function ServicesLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SERVICES_JSON_LD) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }} />
+      {children}
+    </>
+  );
 }

@@ -40,7 +40,7 @@ export const PRODUCTS: ProductData[] = [
     accentDark: '#6366f1',
     glowColor: 'rgba(129,140,248,0.35)',
     description:
-      'BlueStar Variable Refrigerant Flow (VRF) systems represent the pinnacle of multi-zone air conditioning for medium and large commercial buildings. A single outdoor unit connects up to 64 indoor units of varied types across an entire floor or building — delivering independent zone comfort with remarkable energy efficiency. Sneha Enterprises is Bangalore\'s leading BlueStar VRF installer with over 2,000 TR of VRF capacity deployed.',
+      'Blue Star Variable Refrigerant Flow (VRF) systems represent the pinnacle of multi-zone air conditioning for medium and large commercial buildings. A single outdoor unit connects up to 64 indoor units of varied types across an entire floor or building — delivering independent zone comfort with remarkable energy efficiency. Sneha Enterprises is Bangalore\'s leading Blue Star VRF installer with over 2,000 TR of VRF capacity deployed.',
     specRows: [
       { label: 'Capacity Range', value: '8 HP to 54 HP (per ODU)' },
       { label: 'Max Indoor Units', value: 'Up to 64 per outdoor unit' },
@@ -81,7 +81,7 @@ export const PRODUCTS: ProductData[] = [
     accentDark: '#059669',
     glowColor: 'rgba(52,211,153,0.35)',
     description:
-      'BlueStar Package and Ductable Air Conditioners are the preferred central cooling solution for large open-plan spaces — shopping malls, corporate campuses, warehouses, banquet halls, clean rooms and industrial facilities. The new-generation inverter ducted variants (6.25 HP to 28 HP) deliver 25% annualised power savings over conventional ducted systems, with advanced touch-screen controllers, AHU integration kits and multi-outdoor redundancy.',
+      'Blue Star Package and Ductable Air Conditioners are the preferred central cooling solution for large open-plan spaces — shopping malls, corporate campuses, warehouses, banquet halls, clean rooms and industrial facilities. The new-generation inverter ducted variants (6.25 HP to 28 HP) deliver 25% annualised power savings over conventional ducted systems, with advanced touch-screen controllers, AHU integration kits and multi-outdoor redundancy.',
     specRows: [
       { label: 'Capacity Range', value: '2 TR–20 TR (Ducted) / 5 TR–22 TR (Pkg)' },
       { label: 'HP Range', value: '6.25, 10, 14, 21, 28 HP' },
@@ -123,7 +123,7 @@ export const PRODUCTS: ProductData[] = [
     accentDark: '#0284c7',
     glowColor: 'rgba(56,189,248,0.35)',
     description:
-      'BlueStar Split Air Conditioners combine award-winning aesthetics with smart inverter technology to deliver superior comfort for homes, boutique offices and retail spaces. Available in a wide capacity range with multiple star ratings, they are India\'s most popular choice for individual room cooling — backed by 28+ years of Sneha Enterprises\' installation expertise across Bangalore.',
+      'Blue Star Split Air Conditioners combine award-winning aesthetics with smart inverter technology to deliver superior comfort for homes, boutique offices and retail spaces. Available in a wide capacity range with multiple star ratings, they are India\'s most popular choice for individual room cooling — backed by 28+ years of Sneha Enterprises\' installation expertise across Bangalore.',
     specRows: [
       { label: 'Capacity Range', value: '0.75 TR to 2.0 TR' },
       { label: 'Refrigerant', value: 'R-32 (Eco-Friendly)' },
@@ -139,7 +139,7 @@ export const PRODUCTS: ProductData[] = [
       { label: 'Wi-Fi Smart Control', desc: 'Full control via smartphone: schedule, geofencing, voice assistant (Alexa / Google Home) and energy usage reports.' },
       { label: 'Self-Cleaning Function', desc: 'Auto-activates on shutdown — hot refrigerant gas dries the evaporator, eliminating bacteria and mould growth completely.' },
       { label: 'Auto Restart & Sleep Mode', desc: 'Power-cut recovery resumes last settings; Sleep Mode raises set temp by 1°C/hr saving up to 6% extra energy overnight.' },
-      { label: '5-Star BEE Energy Rating', desc: 'Highest BEE certification available — qualifies for government energy efficiency rebates and green building credits.' },
+      { label: 'BEE Energy Efficient', desc: 'Highest BEE certification available — qualifies for government energy efficiency rebates and green building credits.' },
       { label: 'Elegant Premium Design', desc: 'Award-winning slim panel (only 200 mm depth) with piano-finish front panel and hidden LED display for a premium look.' },
     ],
   },
@@ -164,7 +164,7 @@ export const PRODUCTS: ProductData[] = [
     accentDark: '#7c3aed',
     glowColor: 'rgba(167,139,250,0.35)',
     description:
-      'BlueStar Cassette Air Conditioners are ceiling-concealed units engineered for commercial spaces where aesthetics and uniform cooling are equally important. With a slim profile that integrates seamlessly into false ceilings, these units deliver powerful 360° surround airflow that reaches every corner of the conditioned space — making them the preferred choice for offices, retail showrooms, restaurants and hotel lobbies.',
+      'Blue Star Cassette Air Conditioners are ceiling-concealed units engineered for commercial spaces where aesthetics and uniform cooling are equally important. With a slim profile that integrates seamlessly into false ceilings, these units deliver powerful 360° surround airflow that reaches every corner of the conditioned space — making them the preferred choice for offices, retail showrooms, restaurants and hotel lobbies.',
     specRows: [
       { label: 'Capacity Range', value: '1.0 TR to 3.0 TR' },
       { label: 'Refrigerant', value: 'R-32 (Low GWP)' },
@@ -180,7 +180,7 @@ export const PRODUCTS: ProductData[] = [
       { label: 'Inverter Technology', desc: 'Variable-speed DC inverter compressor adjusts capacity in real time — delivering up to 40% energy savings over fixed-speed units.' },
       { label: 'Ultra Slim Ceiling Design', desc: 'Only 230 mm panel depth; installs flush inside false ceiling tiles for a clean, unobtrusive look that preserves interior design.' },
       { label: 'Blue Fin Anti-Corrosion', desc: 'Heat exchanger fins coated with a hydrophilic blue layer resist salt, humidity and industrial pollutants — ideal for coastal locations.' },
-      { label: 'Wi-Fi Smart Control', desc: 'Integrated Wi-Fi module allows remote on/off, temperature scheduling and energy monitoring via the BlueStar iSense mobile app.' },
+      { label: 'Wi-Fi Smart Control', desc: 'Integrated Wi-Fi module allows remote on/off, temperature scheduling and energy monitoring via the Blue Star iSense mobile app.' },
       { label: 'Auto Restart Function', desc: 'Automatically resumes the last-used settings within seconds of power restoration — no manual intervention required after power cuts.' },
     ],
   },
@@ -205,7 +205,7 @@ export const PRODUCTS: ProductData[] = [
     accentDark: '#0891b2',
     glowColor: 'rgba(34,211,238,0.35)',
     description:
-      'BlueStar Chilled Water Systems are built for large commercial and industrial buildings where centralised precision cooling is non-negotiable. Using chilled water as the heat-transfer medium, these systems deliver unmatched energy efficiency across part and full-load conditions. Sneha Enterprises has commissioned over 50 chilled water plants across Bangalore for corporates, hospitals, data centres and manufacturing facilities.',
+      'Blue Star Chilled Water Systems are built for large commercial and industrial buildings where centralised precision cooling is non-negotiable. Using chilled water as the heat-transfer medium, these systems deliver unmatched energy efficiency across part and full-load conditions. Sneha Enterprises has commissioned over 50 chilled water plants across Bangalore for corporates, hospitals, data centres and manufacturing facilities.',
     specRows: [
       { label: 'Capacity Range', value: '20 TR to 500 TR' },
       { label: 'Refrigerant', value: 'R-134A / R-410A / R-1234ze' },
@@ -246,7 +246,7 @@ export const PRODUCTS: ProductData[] = [
     accentDark: '#e11d48',
     glowColor: 'rgba(251,113,133,0.35)',
     description:
-      'BlueStar Screw and Magnetic-Bearing Turbo Chillers represent the absolute pinnacle of large-scale cooling engineering. Designed for district cooling plants, large data centres, pharmaceutical facilities and airports, these machines deliver extraordinary efficiency, near-zero maintenance and a service life exceeding 25 years. The magnetic-bearing centrifugal (turbo) variant eliminates all oil lubrication — the single biggest cause of chiller downtime worldwide.',
+      'Blue Star Screw and Magnetic-Bearing Turbo Chillers represent the absolute pinnacle of large-scale cooling engineering. Designed for district cooling plants, large data centres, pharmaceutical facilities and airports, these machines deliver extraordinary efficiency, near-zero maintenance and a service life exceeding 25 years. The magnetic-bearing centrifugal (turbo) variant eliminates all oil lubrication — the single biggest cause of chiller downtime worldwide.',
     specRows: [
       { label: 'Capacity Range', value: '100 TR to 2,000 TR' },
       { label: 'Refrigerant', value: 'R-134A / R-1234ze / R-514A' },

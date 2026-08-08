@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
   Wind, Snowflake, Droplets, Fan,
   HardHat, CheckCircle2, ArrowRight,
-  Trophy, Medal, Shield, Phone, Download,
+  Trophy, Medal, Shield, Phone,
   Building2, HeartPulse, Hotel, GraduationCap, Factory,
 } from 'lucide-react';
 
@@ -18,48 +18,48 @@ gsap.registerPlugin(ScrollTrigger);
 
 /* ─── Data ───────────────────────────────────────────────── */
 const capabilities = [
-  { icon: Wind,         label: 'VRF System',                  desc: 'Variable Refrigerant Flow for energy-efficient large-scale cooling' },
-  { icon: Snowflake,    label: 'Ducted Split & Packaged ACs', desc: 'Tailored for mid-scale offices, retail and commercial spaces'       },
-  { icon: Droplets,     label: 'Chilled Water System',        desc: 'High-capacity central cooling for large complexes'                   },
-  { icon: Fan,          label: 'Ventilation System',          desc: 'Fresh-air management for healthy indoor environments'                },
-  { icon: HardHat,      label: 'Installation & Commissioning',desc: 'End-to-end project delivery by certified engineers'                 },
-  { icon: CheckCircle2, label: 'Annual Maintenance',          desc: '24/7 support & preventive maintenance programs'                     },
+  { icon: Wind, label: 'VRF System', desc: 'Variable Refrigerant Flow for energy-efficient large-scale cooling' },
+  { icon: Snowflake, label: 'Ducted Split & Packaged ACs', desc: 'Tailored for mid-scale offices, retail and commercial spaces' },
+  { icon: Droplets, label: 'Chilled Water System', desc: 'High-capacity central cooling for large complexes' },
+  { icon: Fan, label: 'Ventilation System', desc: 'Fresh-air management for healthy indoor environments' },
+  { icon: HardHat, label: 'Installation & Commissioning', desc: 'End-to-end project delivery by certified engineers' },
+  { icon: CheckCircle2, label: 'Annual Maintenance', desc: '24/7 support & preventive maintenance programs' },
 ];
 
 const awards = [
-  { year: '2006', title: 'No. 1 Dealer in Karnataka',        org: 'Blue Star Ltd',       detail: 'Ranked the top Blue Star dealer across all of Karnataka.',                              rank: 1, color: '#f59e0b', image: '' },
-  { year: '2007', title: 'No. 2 Dealer in Karnataka',        org: 'Blue Star Ltd',       detail: 'Ranked No. 2 for 2007 & 2008 across Karnataka.',                                       rank: 2, color: '#94a3b8', image: '' },
-  { year: '2009', title: 'No. 1 Dealer in Karnataka',        org: 'Blue Star Ltd',       detail: 'Reclaimed the top position — No. 1 dealer in Karnataka.',                              rank: 1, color: '#f59e0b', image: '' },
-  { year: '2012', title: 'Best Services Award',              org: 'Aditya Birla Group',  detail: 'Recognised for exceptional HVAC service delivery.',                                     rank: 0, color: '#10b981', image: '' },
-  { year: '2014', title: 'Best Services Award',              org: 'Cross Domain & NIIT', detail: 'Awarded for outstanding service at two major IT firms.',                                 rank: 0, color: '#8b5cf6', image: '' },
-  { year: '2015', title: 'Best Execution Award',             org: 'Monsanto Project',    detail: 'Recognised for on-time, precision HVAC execution.',                                      rank: 0, color: '#f97316', image: '' },
-  { year: '2020', title: 'Best Execution Award',             org: 'Applied Materials',   detail: 'Awarded for best-in-class project execution.',                                          rank: 0, color: '#0ea5e9', image: '' },
-  { year: '2020', title: 'Star League Award',                org: 'Blue Star Ltd',       detail: 'Star League recognition for Commercial Air Conditioners — Bengaluru, Karnataka.',       rank: 0, color: '#6366f1', image: '/img/timeline/IMG_20260418_133555.jpg.jpeg' },
-  { year: '2023', title: 'Star League Award',                org: 'Blue Star Ltd',       detail: 'Star League recognition for Commercial Air Conditioning Division — Bengaluru, Karnataka.', rank: 0, color: '#6366f1', image: '/img/timeline/IMG_20260418_133103.jpg.jpeg' },
-  { year: '2025', title: 'Excellence in Customer Retention', org: 'Blue Star Ltd',       detail: 'Channel Partner Award — Bengaluru region, for outstanding customer retention in FY 2024-25.', rank: 0, color: '#f59e0b', image: '/img/timeline/IMG_20260418_133543.jpg.jpeg' },
+  { year: '2006', title: 'No. 1 Dealer in Karnataka', org: 'Blue Star Ltd', detail: 'Ranked the top Blue Star dealer across all of Karnataka.', rank: 1, color: '#f59e0b', image: '' },
+  { year: '2007', title: 'No. 2 Dealer in Karnataka', org: 'Blue Star Ltd', detail: 'Ranked No. 2 for 2007 & 2008 across Karnataka.', rank: 2, color: '#94a3b8', image: '' },
+  { year: '2009', title: 'No. 1 Dealer in Karnataka', org: 'Blue Star Ltd', detail: 'Reclaimed the top position — No. 1 dealer in Karnataka.', rank: 1, color: '#f59e0b', image: '' },
+  { year: '2012', title: 'Best Services Award', org: 'Aditya Birla Group', detail: 'Recognised for exceptional HVAC service delivery.', rank: 0, color: '#10b981', image: '' },
+  { year: '2014', title: 'Best Services Award', org: 'Cross Domain & NIIT', detail: 'Awarded for outstanding service at two major IT firms.', rank: 0, color: '#8b5cf6', image: '' },
+  { year: '2015', title: 'Best Execution Award', org: 'Monsanto Project', detail: 'Recognised for on-time, precision HVAC execution.', rank: 0, color: '#f97316', image: '' },
+  { year: '2020', title: 'Best Execution Award', org: 'Applied Materials', detail: 'Awarded for best-in-class project execution.', rank: 0, color: '#0ea5e9', image: '' },
+  { year: '2020', title: 'Star League Award', org: 'Blue Star Ltd', detail: 'Star League recognition for Commercial Air Conditioners — Bengaluru, Karnataka.', rank: 0, color: '#6366f1', image: '/img/timeline/IMG_20260418_133555.jpg.jpeg' },
+  { year: '2023', title: 'Star League Award', org: 'Blue Star Ltd', detail: 'Star League recognition for Commercial Air Conditioning Division — Bengaluru, Karnataka.', rank: 0, color: '#6366f1', image: '/img/timeline/IMG_20260418_133103.jpg.jpeg' },
+  { year: '2025', title: 'Excellence in Customer Retention', org: 'Blue Star Ltd', detail: 'Channel Partner Award — Bengaluru region, for outstanding customer retention in FY 2024-25.', rank: 0, color: '#f59e0b', image: '/img/timeline/IMG_20260418_133543.jpg.jpeg' },
 ];
 
 const teamRows = [
-  { role: 'Project Engineers',      count: '20', color: '#6366f1' },
-  { role: 'Planning Engineers',     count: '5',  color: '#8b5cf6' },
-  { role: 'Service Team',           count: '45', color: '#10b981' },
-  { role: 'Sales Engineers',        count: '2',  color: '#f59e0b' },
-  { role: 'EHS officers', count: '6',  color: '#0ea5e9' },
+  { role: 'Project Engineers', count: '20', color: '#6366f1' },
+  { role: 'Planning Engineers', count: '5', color: '#8b5cf6' },
+  { role: 'Service Team', count: '45', color: '#10b981' },
+  { role: 'Sales Engineers', count: '2', color: '#f59e0b' },
+  { role: 'EHS officers', count: '6', color: '#0ea5e9' },
 
 ];
 
 const sectors = [
-  { icon: Building2,    label: 'Corporates'  },
-  { icon: HeartPulse,   label: 'Hospitals'   },
-  { icon: Hotel,        label: 'Hotels'      },
-  { icon: GraduationCap,label: 'Institutions'},
-  { icon: Factory,      label: 'Industries'  },
-  { icon: HardHat,      label: 'Builders'    },
+  { icon: Building2, label: 'Corporates' },
+  { icon: HeartPulse, label: 'Hospitals' },
+  { icon: Hotel, label: 'Hotels' },
+  { icon: GraduationCap, label: 'Institutions' },
+  { icon: Factory, label: 'Industries' },
+  { icon: HardHat, label: 'Builders' },
 ];
 
 /* ─── Page ───────────────────────────────────────────────── */
 export default function AboutPage() {
-  const awRef  = useRef<HTMLElement>(null);
+  const awRef = useRef<HTMLElement>(null);
   const teamRef = useRef<HTMLElement>(null);
   const [hoveredAward, setHoveredAward] = useState<number | null>(null);
 
@@ -74,48 +74,64 @@ export default function AboutPage() {
       /* KPIs */
       gsap.fromTo('.kpi-card',
         { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, stagger: 0.09, duration: 0.65, ease: 'back.out(1.4)', immediateRender: false,
-          scrollTrigger: { trigger: '.kpi-row', start: 'top 84%', once: true } });
+        {
+          y: 0, opacity: 1, stagger: 0.09, duration: 0.65, ease: 'back.out(1.4)', immediateRender: false,
+          scrollTrigger: { trigger: '.kpi-row', start: 'top 84%', once: true }
+        });
 
       /* Story */
       gsap.fromTo('.story-block',
         { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, stagger: 0.1, duration: 0.7, ease: 'power3.out', immediateRender: false,
-          scrollTrigger: { trigger: '.story-section', start: 'top 80%', once: true } });
+        {
+          y: 0, opacity: 1, stagger: 0.1, duration: 0.7, ease: 'power3.out', immediateRender: false,
+          scrollTrigger: { trigger: '.story-section', start: 'top 80%', once: true }
+        });
 
       gsap.fromTo('.sector-pill',
         { scale: 0.85, opacity: 0 },
-        { scale: 1, opacity: 1, stagger: 0.06, duration: 0.5, ease: 'back.out(1.6)', immediateRender: false,
-          scrollTrigger: { trigger: '.sectors-row', start: 'top 85%', once: true } });
+        {
+          scale: 1, opacity: 1, stagger: 0.06, duration: 0.5, ease: 'back.out(1.6)', immediateRender: false,
+          scrollTrigger: { trigger: '.sectors-row', start: 'top 85%', once: true }
+        });
 
       /* Capabilities */
       gsap.fromTo('.cap-card',
         { y: 50, opacity: 0, scale: 0.93 },
-        { y: 0, opacity: 1, scale: 1, stagger: 0.07, duration: 0.6, ease: 'power3.out', immediateRender: false,
-          scrollTrigger: { trigger: '.cap-grid', start: 'top 80%', once: true } });
+        {
+          y: 0, opacity: 1, scale: 1, stagger: 0.07, duration: 0.6, ease: 'power3.out', immediateRender: false,
+          scrollTrigger: { trigger: '.cap-grid', start: 'top 80%', once: true }
+        });
 
       /* Team */
       gsap.fromTo('.team-head > *',
         { x: -40, opacity: 0 },
-        { x: 0, opacity: 1, stagger: 0.1, duration: 0.75, ease: 'power3.out', immediateRender: false,
-          scrollTrigger: { trigger: teamRef.current, start: 'top 76%', once: true } });
+        {
+          x: 0, opacity: 1, stagger: 0.1, duration: 0.75, ease: 'power3.out', immediateRender: false,
+          scrollTrigger: { trigger: teamRef.current, start: 'top 76%', once: true }
+        });
 
       gsap.fromTo('.team-row-item',
         { x: 40, opacity: 0 },
-        { x: 0, opacity: 1, stagger: 0.09, duration: 0.65, ease: 'power3.out', immediateRender: false,
-          scrollTrigger: { trigger: '.team-rows', start: 'top 80%', once: true } });
+        {
+          x: 0, opacity: 1, stagger: 0.09, duration: 0.65, ease: 'power3.out', immediateRender: false,
+          scrollTrigger: { trigger: '.team-rows', start: 'top 80%', once: true }
+        });
 
       /* Awards header */
       gsap.fromTo('.aw-head > *',
         { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, stagger: 0.12, duration: 0.75, ease: 'power3.out', immediateRender: false,
-          scrollTrigger: { trigger: awRef.current, start: 'top 80%', once: true } });
+        {
+          y: 0, opacity: 1, stagger: 0.12, duration: 0.75, ease: 'power3.out', immediateRender: false,
+          scrollTrigger: { trigger: awRef.current, start: 'top 80%', once: true }
+        });
 
       /* Timeline items */
       gsap.fromTo('.tl-item',
         { opacity: 0, y: 40 },
-        { opacity: 1, y: 0, stagger: 0.12, duration: 0.65, ease: 'power3.out', immediateRender: false,
-          scrollTrigger: { trigger: '.tl-track', start: 'top 78%', once: true } });
+        {
+          opacity: 1, y: 0, stagger: 0.12, duration: 0.65, ease: 'power3.out', immediateRender: false,
+          scrollTrigger: { trigger: '.tl-track', start: 'top 78%', once: true }
+        });
 
     });
     return () => ctx.revert();
@@ -201,10 +217,10 @@ export default function AboutPage() {
         <div className="mx-auto max-w-5xl">
           <div className="grid grid-cols-2 overflow-hidden rounded-3xl border border-slate-100 shadow-lg dark:border-slate-800 md:grid-cols-4">
             {[
-              { val: `${getYearsExp()}+`, sub: 'Years of Excellence',    accent: '#0ea5e9' },
-              { val: '10,000+', sub: 'Tons Installed',          accent: '#10b981' },
-              { val: '45+',     sub: 'Engineers & Technicians', accent: '#f59e0b' },
-              { val: '100+',    sub: 'Clients Served',           accent: '#8b5cf6' },
+              { val: `${getYearsExp()}+`, sub: 'Years of Excellence', accent: '#0ea5e9' },
+              { val: '10,000+', sub: 'Tons Installed', accent: '#10b981' },
+              { val: '45+', sub: 'Engineers & Technicians', accent: '#f59e0b' },
+              { val: '100+', sub: 'Clients Served', accent: '#8b5cf6' },
             ].map((k, i) => (
               <div
                 key={k.sub}
@@ -462,7 +478,9 @@ export default function AboutPage() {
             <div className="space-y-10">
               {awards.map((a, i) => {
                 const isLeft = i % 2 === 0;
-                const AwardIcon = a.rank === 1 ? Trophy : a.rank === 2 ? Medal : Shield;
+                let AwardIcon = Shield;
+                if (a.rank === 1) AwardIcon = Trophy;
+                else if (a.rank === 2) AwardIcon = Medal;
                 return (
                   <div
                     key={`${a.year}-${a.title}`}

@@ -6,16 +6,14 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
 import {
-  Building2, HeartPulse, Hotel, GraduationCap,
+  Building2, HeartPulse, Hotel,
   Factory, HardHat, ArrowRight, ChevronDown,
 } from 'lucide-react';
-
-import { getYearsExp } from '../lib/founding';
 
 gsap.registerPlugin(ScrollTrigger);
 
 /* ─── Types ──────────────────────────────────────────────── */
-type Sector = 'Corporate' | 'Hospital' | 'Hotel' | 'Institution' | 'Industry' | 'Builder';
+type Sector = 'Corporate' | 'Hospital' | 'Hotel' | 'Industry' | 'Builder';
 
 interface Client {
   name: string;
@@ -27,98 +25,150 @@ interface Client {
 
 /* ─── Client data ────────────────────────────────────────── */
 const clients: Client[] = [
-  { name: 'Google',              initials: 'GGL', logo: '/img/clients/google.webp',                         color: '#4285f4', sector: 'Corporate'   },
-  { name: 'Bosch',               initials: 'BSH', logo: '/img/clients/Bosch1.webp',                          color: '#374151', sector: 'Corporate'   },
-  { name: 'Flipkart',            initials: 'FLK', logo: '/img/clients/flipkart.webp',                        color: '#d97706', sector: 'Corporate'   },
-  { name: 'Deloitte',            initials: 'DEL', logo: '/img/clients/Deloitte.webp',                        color: '#15803d', sector: 'Corporate'   },
-  { name: 'PwC',                 initials: 'PWC', logo: '/img/clients/pwc.webp',                             color: '#c2410c', sector: 'Corporate'   },
-  { name: 'Myntra',              initials: 'MYN', logo: '/img/clients/Myntra.webp',                          color: '#db2777', sector: 'Corporate'   },
-  { name: 'CRED',                initials: 'CRD', logo: '/img/clients/cred.webp',                            color: '#1e293b', sector: 'Corporate'   },
-  { name: 'HDFC',                initials: 'HDF', logo: '/img/clients/hdfc.webp',                            color: '#1d4ed8', sector: 'Corporate'   },
-  { name: 'AMD',                 initials: 'AMD', logo: '/img/clients/amd.webp',                             color: '#b91c1c', sector: 'Corporate'   },
-  { name: 'Exxon Mobil',         initials: 'EXM', logo: '/img/clients/Exxon Mobil.webp',                    color: '#991b1b', sector: 'Corporate'   },
-  { name: 'TVS',                 initials: 'TVS', logo: '/img/clients/TVS.webp',                             color: '#1e3a8a', sector: 'Corporate'   },
-  { name: 'AirAsia',             initials: 'AIR', logo: '/img/clients/airasia.webp',                        color: '#dc2626', sector: 'Corporate'   },
-  { name: 'Fossil',              initials: 'FOS', logo: '/img/clients/fossil.webp',                         color: '#92400e', sector: 'Corporate'   },
-  { name: 'Mercedes-Benz',       initials: 'MBZ', logo: '/img/clients/benz.webp',                           color: '#334155', sector: 'Corporate'   },
-  { name: 'DXC Technology',      initials: 'DXC', logo: '/img/clients/dxcpng.webp',                         color: '#6d28d9', sector: 'Corporate'   },
-  { name: 'Applied Materials',   initials: 'APM', logo: '/img/clients/Applied Materials.webp',              color: '#1d4ed8', sector: 'Corporate'   },
-  { name: 'Autoliv',             initials: 'AUT', logo: '/img/clients/Autoliv.webp',                        color: '#3730a3', sector: 'Corporate'   },
-  { name: 'ThoughtWorks',        initials: 'TW',  logo: '/img/clients/Thought Works.webp',                  color: '#5b21b6', sector: 'Corporate'   },
-  { name: 'Brigade Group',       initials: 'BRG', logo: '/img/clients/brigade-group.webp',                  color: '#0369a1', sector: 'Builder'    },
-  { name: 'Prestige',            initials: 'PRE', logo: '/img/clients/prestige.webp',                       color: '#0e7490', sector: 'Builder'    },
-  { name: 'IndiQube',            initials: 'IDQ', logo: '/img/clients/Indiqube.webp',                       color: '#be123c', sector: 'Builder'    },
-  { name: 'Vestian Global',      initials: 'VST', logo: '/img/clients/vestian.webp',                      color: '#4338ca', sector: 'Builder'    },
-  { name: 'Tablespace',          initials: 'TBS', logo: '/img/clients/tablespace.webp',                     color: '#7c3aed', sector: 'Builder'    },
-  { name: 'Blume Global',        initials: 'BLM', logo: '/img/clients/blumeglobal.webp',                    color: '#0c4a6e', sector: 'Corporate'   },
-  { name: 'Cross Domain',        initials: 'CRD', logo: '/img/clients/Cross Domain.webp',                   color: '#9a3412', sector: 'Corporate'   },
-  { name: 'Danske IT',           initials: 'DAN', logo: '/img/clients/Danske IT.webp',                      color: '#1e40af', sector: 'Corporate'   },
-  { name: 'AV Hospital',         initials: 'AVH', logo: '/img/clients/AV Hospita.webp',                     color: '#065f46', sector: 'Hospital'    },
-  { name: 'Baptist Hospital',    initials: 'BAP', logo: '/img/clients/Baptist Hospitals.webp',              color: '#1e3a8a', sector: 'Hospital'    },
-  { name: 'Sparsh Hospital',     initials: 'SPR', logo: '/img/clients/Sparsh Hospitals.webp',               color: '#134e4a', sector: 'Hospital'    },
-  { name: 'Nelivigi Hospital',   initials: 'NLV', logo: '/img/clients/Nelivigi Hospitals.webp',             color: '#166534', sector: 'Hospital'    },
-  { name: 'Vijay Hospital',      initials: 'VJH', logo: '/img/clients/vijay-hospital.webp',                 color: '#991b1b', sector: 'Hospital'    },
-  { name: 'Biocon',              initials: 'BIO', logo: '/img/clients/Biocon.webp',                         color: '#0f766e', sector: 'Hospital'    },
-  { name: 'Prestige Forum Mall', initials: 'PFM', logo: '/img/clients/Prestige Forum Mall.webp',            color: '#164e63', sector: 'Hotel'       },
-  { name: 'Eagleton Golf',       initials: 'EGL', logo: '/img/clients/Eagleton Golf.webp',                  color: '#14532d', sector: 'Hotel'       },
-  { name: 'Ocean Pearl',         initials: 'OCP', logo: '/img/clients/Ocean Pear.webp',                     color: '#1e3a8a', sector: 'Hotel'       },
-  { name: 'Whitefield Inn',      initials: 'WHI', logo: '/img/clients/Whitefield Inn.webp',                 color: '#065f46', sector: 'Hotel'       },
-  { name: 'IIMB',                initials: 'IIM', logo: '/img/clients/IIMB.webp',                           color: '#1e3a8a', sector: 'Institution' },
-  { name: 'Presidency University',initials: 'PRU', logo: '/img/clients/Presidency University.webp',         color: '#312e81', sector: 'Institution' },
-  { name: 'Vogue Fashion Inst.', initials: 'VFI', logo: '/img/clients/Vogue Institute of Fashion.webp',    color: '#9d174d', sector: 'Institution' },
-  { name: 'Axiom Research',      initials: 'AXR', logo: '/img/clients/Axiom Research Laboratory.webp',     color: '#334155', sector: 'Institution' },
-  { name: 'Bidadi Industries',   initials: 'BID', logo: '/img/clients/bidadi-industries-association.webp', color: '#1f2937', sector: 'Industry'    },
-  { name: 'Centum Rakon',        initials: 'CRK', logo: '/img/clients/Centum Rakon.webp',                  color: '#4c1d95', sector: 'Industry'    },
-  { name: 'Renewsys',            initials: 'RNW', logo: '/img/clients/Renewsys.webp',                      color: '#14532d', sector: 'Industry'    },
-  { name: 'Incubex',             initials: 'INQ', logo: '/img/clients/Incubex.webp',                       color: '#78350f', sector: 'Industry'    },
-  { name: 'HFCL',                initials: 'HFC', logo: '/img/clients/hfcl.webp',                          color: '#1d4ed8', sector: 'Industry'    },
-  { name: 'Bagmane',             initials: 'BAG', logo: '/img/clients/bagmane-logo.webp',                  color: '#0369a1', sector: 'Builder'     },
-  { name: 'Cherry Hills',        initials: 'CHR', logo: '/img/clients/Cherry_hills.webp',                  color: '#be123c', sector: 'Builder'       },
-  { name: 'DWP Interics',        initials: 'DWP', logo: '/img/clients/dwp_interics_private_limited_logo.webp', color: '#334155', sector: 'Builder' },
-  { name: 'JLL',                 initials: 'JLL', logo: '/img/clients/JLL.webp',                           color: '#dc2626', sector: 'Corporate'  },
-  { name: 'Radhika Somanna',     initials: 'RAD', logo: '/img/clients/Radhika Somanna.webp',               color: '#7c3aed', sector: 'Builder'   },
-  { name: 'Raj Consultancy Services', initials: 'RAJ', logo: '/img/clients/raj_consultancy_services_cover.webp',                           color: '#92400e', sector: 'Corporate'  },
+  { name: 'Google', initials: 'GGL', logo: '/img/clients/google.webp', color: '#4285f4', sector: 'Corporate' },
+  { name: 'Bosch', initials: 'BSH', logo: '/img/clients/Bosch1.webp', color: '#374151', sector: 'Corporate' },
+  { name: 'Flipkart', initials: 'FLK', logo: '/img/clients/flipkart.webp', color: '#d97706', sector: 'Corporate' },
+  { name: 'Deloitte', initials: 'DEL', logo: '/img/clients/Deloitte.webp', color: '#15803d', sector: 'Corporate' },
+  { name: 'PwC', initials: 'PWC', logo: '/img/clients/pwc.webp', color: '#c2410c', sector: 'Corporate' },
+  { name: 'Myntra', initials: 'MYN', logo: '/img/clients/Myntra.webp', color: '#db2777', sector: 'Corporate' },
+  { name: 'CRED', initials: 'CRD', logo: '/img/clients/cred.webp', color: '#1e293b', sector: 'Corporate' },
+  { name: 'HDFC', initials: 'HDF', logo: '/img/clients/hdfc.webp', color: '#1d4ed8', sector: 'Corporate' },
+  { name: 'AMD', initials: 'AMD', logo: '/img/clients/amd.webp', color: '#b91c1c', sector: 'Corporate' },
+  { name: 'Exxon Mobil', initials: 'EXM', logo: '/img/clients/Exxon Mobil.webp', color: '#991b1b', sector: 'Corporate' },
+  { name: 'TVS', initials: 'TVS', logo: '/img/clients/TVS.webp', color: '#1e3a8a', sector: 'Corporate' },
+  { name: 'AirAsia', initials: 'AIR', logo: '/img/clients/airasia.webp', color: '#dc2626', sector: 'Corporate' },
+  { name: 'Fossil', initials: 'FOS', logo: '/img/clients/fossil.webp', color: '#92400e', sector: 'Corporate' },
+  { name: 'Mercedes-Benz', initials: 'MBZ', logo: '/img/clients/benz.webp', color: '#334155', sector: 'Corporate' },
+  { name: 'DXC Technology', initials: 'DXC', logo: '/img/clients/dxcpng.webp', color: '#6d28d9', sector: 'Corporate' },
+  { name: 'Applied Materials', initials: 'APM', logo: '/img/clients/Applied Materials.webp', color: '#1d4ed8', sector: 'Corporate' },
+  { name: 'Autoliv', initials: 'AUT', logo: '/img/clients/Autoliv.webp', color: '#3730a3', sector: 'Corporate' },
+  { name: 'ThoughtWorks', initials: 'TW', logo: '/img/clients/Thought Works.webp', color: '#5b21b6', sector: 'Corporate' },
+  { name: 'Brigade Group', initials: 'BRG', logo: '/img/clients/brigade-group.webp', color: '#0369a1', sector: 'Builder' },
+  { name: 'Prestige', initials: 'PRE', logo: '/img/clients/prestige.webp', color: '#0e7490', sector: 'Builder' },
+  { name: 'IndiQube', initials: 'IDQ', logo: '/img/clients/Indiqube.webp', color: '#be123c', sector: 'Builder' },
+  { name: 'Vestian Global', initials: 'VST', logo: '/img/clients/vestian.webp', color: '#4338ca', sector: 'Builder' },
+  { name: 'Tablespace', initials: 'TBS', logo: '/img/clients/tablespace.webp', color: '#7c3aed', sector: 'Builder' },
+  { name: 'Blume Global', initials: 'BLM', logo: '/img/clients/blumeglobal.webp', color: '#0c4a6e', sector: 'Corporate' },
+  { name: 'AV Hospital', initials: 'AVH', logo: '/img/clients/AV Hospita.webp', color: '#065f46', sector: 'Hospital' },
+  { name: 'Baptist Hospital', initials: 'BAP', logo: '/img/clients/Baptist Hospitals.webp', color: '#1e3a8a', sector: 'Hospital' },
+  { name: 'Sparsh Hospital', initials: 'SPR', logo: '/img/clients/Sparsh Hospitals.webp', color: '#134e4a', sector: 'Hospital' },
+  { name: 'Nelivigi Hospital', initials: 'NLV', logo: '/img/clients/Nelivigi Hospitals.webp', color: '#166534', sector: 'Hospital' },
+  { name: 'Vijay Hospital', initials: 'VJH', logo: '/img/clients/vijay-hospital.webp', color: '#991b1b', sector: 'Hospital' },
+  { name: 'Biocon', initials: 'BIO', logo: '/img/clients/Biocon.webp', color: '#0f766e', sector: 'Hospital' },
+  { name: 'Prestige Forum Mall', initials: 'PFM', logo: '/img/clients/Prestige Forum Mall.webp', color: '#164e63', sector: 'Hotel' },
+  { name: 'Eagleton Golf', initials: 'EGL', logo: '/img/clients/Eagleton Golf.webp', color: '#14532d', sector: 'Hotel' },
+  { name: 'Ocean Pearl', initials: 'OCP', logo: '/img/clients/Ocean Pear.webp', color: '#1e3a8a', sector: 'Hotel' },
+  { name: 'Whitefield Inn', initials: 'WHI', logo: '/img/clients/Whitefield Inn.webp', color: '#065f46', sector: 'Hotel' },
+
+  { name: 'Bidadi Industries', initials: 'BID', logo: '/img/clients/bidadi-industries-association.webp', color: '#1f2937', sector: 'Industry' },
+  { name: 'Centum Rakon', initials: 'CRK', logo: '/img/clients/Centum Rakon.webp', color: '#4c1d95', sector: 'Industry' },
+  { name: 'Renewsys', initials: 'RNW', logo: '/img/clients/Renewsys.webp', color: '#14532d', sector: 'Industry' },
+  { name: 'Incubex', initials: 'INQ', logo: '/img/clients/Incubex.webp', color: '#78350f', sector: 'Industry' },
+  { name: 'HFCL', initials: 'HFC', logo: '/img/clients/hfcl.webp', color: '#1d4ed8', sector: 'Industry' },
+  { name: 'Bagmane', initials: 'BAG', logo: '/img/clients/bagmane-logo.webp', color: '#0369a1', sector: 'Builder' },
+  { name: 'Cherry Hills', initials: 'CHR', logo: '/img/clients/Cherry_hills.webp', color: '#be123c', sector: 'Builder' },
+  { name: 'DWP Interics', initials: 'DWP', logo: '/img/clients/dwp_interics_private_limited_logo.webp', color: '#334155', sector: 'Builder' },
+  { name: 'JLL', initials: 'JLL', logo: '/img/clients/JLL.webp', color: '#dc2626', sector: 'Corporate' },
+  { name: 'Radhika Somanna', initials: 'RAD', logo: '/img/clients/Radhika Somanna.webp', color: '#7c3aed', sector: 'Builder' },
+  { name: 'Raj Consultancy Services', initials: 'RAJ', logo: '/img/clients/raj_consultancy_services_cover.webp', color: '#92400e', sector: 'Builder' },
+
+  /* ─── New Corporate & Tech clients ─── */
+  { name: 'Biocon Biologics Ltd', initials: 'BBL', logo: '/img/clients/new-clients/Biocon-Biologics-Ltd.webp', color: '#0d9488', sector: 'Corporate' },
+  { name: 'ABB India Ltd', initials: 'ABB', logo: '/img/clients/new-clients/ABB India Ltd.webp', color: '#dc2626', sector: 'Corporate' },
+  { name: 'ServiceNow', initials: 'SNW', logo: '/img/clients/new-clients/Service Now Software Development pvt Ltd.webp', color: '#81b532', sector: 'Corporate' },
+  { name: 'Amex', initials: 'AMX', logo: '/img/clients/new-clients/Amex.webp', color: '#016fd0', sector: 'Corporate' },
+  { name: 'Microsoft', initials: 'MSF', logo: '/img/clients/new-clients/Microsoft.webp', color: '#00a4ef', sector: 'Corporate' },
+  { name: 'UD Trucks India', initials: 'UDT', logo: '/img/clients/new-clients/U D Truck India Pvt Ltd.webp', color: '#1e3a5f', sector: 'Corporate' },
+  { name: 'Lam Research India', initials: 'LAM', logo: '/img/clients/new-clients/Lam Research India Pvt Ltd.webp', color: '#6d28d9', sector: 'Corporate' },
+  { name: 'ACL Pvt Ltd', initials: 'ACL', logo: '/img/clients/new-clients/ACL Pvt Ltd.webp', color: '#1e40af', sector: 'Corporate' },
+  { name: 'Polaris India', initials: 'POL', logo: '/img/clients/new-clients/Polaris India Pvt Ltd..webp', color: '#0e7490', sector: 'Corporate' },
+  { name: 'General Motors India', initials: 'GMI', logo: '/img/clients/new-clients/General Motors India Pvt Ltd.webp', color: '#1d4ed8', sector: 'Corporate' },
+  { name: 'Caterpillar India', initials: 'CAT', logo: '/img/clients/new-clients/Caterpiller India Engineering Solution Pvt Ltd.webp', color: '#f59e0b', sector: 'Corporate' },
+  { name: 'Volvo Group India', initials: 'VLV', logo: '/img/clients/new-clients/Volvo Group India ltd.webp', color: '#1e3a8a', sector: 'Corporate' },
+  { name: 'Infosys India', initials: 'INF', logo: '/img/clients/new-clients/Infosys India Pvt Ltd..webp', color: '#1d4ed8', sector: 'Corporate' },
+  { name: 'ClearTax (Defmacro)', initials: 'CLR', logo: '/img/clients/new-clients/Defmacro Sofware Pvt Ltd (Clear Tax).webp', color: '#2563eb', sector: 'Corporate' },
+  { name: 'Thyssenkrupp Aerospace India', initials: 'TKR', logo: '/img/clients/new-clients/Thyssenkrupp Aerospace India Pvt Ltd.webp', color: '#0284c7', sector: 'Corporate' },
+  { name: 'Thales India', initials: 'THL', logo: '/img/clients/new-clients/Thales India Pvt Ltd.webp', color: '#1e3a8a', sector: 'Corporate' },
+  { name: 'VISA Technology Center', initials: 'VIS', logo: '/img/clients/new-clients/VISA INC Techology Center.webp', color: '#1a1f71', sector: 'Corporate' },
+  { name: 'Federal Bank Ltd', initials: 'FBL', logo: '/img/clients/new-clients/Federal Bank Ltd.webp', color: '#1e3a8a', sector: 'Corporate' },
+  { name: 'GMS World Wide Express', initials: 'GMS', logo: '/img/clients/new-clients/GMS World Wide Express Pvt Ltd.webp', color: '#dc2626', sector: 'Corporate' },
+  { name: 'Volkswagen Group Sales India', initials: 'VWG', logo: '/img/clients/new-clients/Volkswagen Group Sales India Pvt Ltd.webp', color: '#1d4ed8', sector: 'Corporate' },
+  { name: 'Carl Zeiss India', initials: 'CZI', logo: '/img/clients/new-clients/Carl- Zesis India Pvt Ltd.webp', color: '#1e3a8a', sector: 'Corporate' },
+  { name: 'IG Infotech', initials: 'IGI', logo: '/img/clients/new-clients/IG Infotech Pvt Ltd.webp', color: '#059669', sector: 'Corporate' },
+  { name: 'Britannia Industries', initials: 'BRT', logo: '/img/clients/new-clients/Britiania Industries Ltd.webp', color: '#1d4ed8', sector: 'Corporate' },
+  { name: 'PowerSchool India', initials: 'PWS', logo: '/img/clients/new-clients/Power School India Pvt Ltd.webp', color: '#f97316', sector: 'Corporate' },
+  { name: 'Dell India', initials: 'DLL', logo: '/img/clients/new-clients/Dell India Pvt Ltd.webp', color: '#0076ce', sector: 'Corporate' },
+  { name: 'Razorpay', initials: 'RZP', logo: '/img/clients/new-clients/Razorpay Software Pvt Ltd.webp', color: '#2563eb', sector: 'Corporate' },
+
+  /* ─── New Healthcare clients ─── */
+  { name: 'BLD Bijapur Hospital', initials: 'BLD', logo: '/img/clients/new-clients/BLD Bijapur Hospital & Medical Collage.webp', color: '#166534', sector: 'Hospital' },
+  { name: 'Bren Champion Hospital', initials: 'BCH', logo: '/img/clients/new-clients/belenusChampion hospital.webp', color: '#0e7490', sector: 'Hospital' },
+  { name: 'Narayana Health Care', initials: 'NHC', logo: '/img/clients/new-clients/Narayana Health Care.webp', color: '#dc2626', sector: 'Hospital' },
+  { name: 'Ephicacy Life Science', initials: 'ELS', logo: '/img/clients/new-clients/Ephicacy  Life Science Analytics Pvt Ltd.webp', color: '#7c3aed', sector: 'Hospital' },
+  { name: 'US Bio Medicals Systems', initials: 'USB', logo: '/img/clients/new-clients/US Bio Medicals Systems India Pvt Ltd.webp', color: '#0369a1', sector: 'Hospital' },
+  { name: 'Medgenome Labs', initials: 'MGL', logo: '/img/clients/new-clients/Medgenome Labs Ltd.webp', color: '#7c3aed', sector: 'Hospital' },
+
+  /* ─── New Hospitality clients ─── */
+  { name: 'Porcupine Pub', initials: 'PCP', logo: '/img/clients/new-clients/Procupine Pub.webp', color: '#92400e', sector: 'Hotel' },
+  { name: 'AMEL Gourmet Restaurant', initials: 'AML', logo: '/img/clients/new-clients/AMEL Gourment Resturant.webp', color: '#b91c1c', sector: 'Hotel' },
+  { name: 'Prestige Hospitality Ventures', initials: 'PHV', logo: '/img/clients/new-clients/Pretsige Hospitality Ventures ltd.webp', color: '#164e63', sector: 'Hotel' },
+  { name: 'Sri Sai Krupa Bar & Restaurant', initials: 'SSK', logo: '/img/clients/new-clients/Sri Sai Krupa Bar & Resturant.webp', color: '#b45309', sector: 'Hotel' },
+  { name: 'Xtream Gym & Spa', initials: 'XGS', logo: '/img/clients/new-clients/xtream Gym & Spa.webp', color: '#dc2626', sector: 'Hotel' },
+
+  /* ─── New Industry clients ─── */
+  { name: 'Biolitech India', initials: 'BLT', logo: '/img/clients/new-clients/Biolitech India Pvt Ltd.webp', color: '#059669', sector: 'Industry' },
+  { name: 'Qualitus Pharma Solutions', initials: 'QPS', logo: '/img/clients/new-clients/Qualitus Pharma Solutions Pvt Ltd.webp', color: '#7c3aed', sector: 'Industry' },
+  { name: 'TIEA Connectors', initials: 'TIA', logo: '/img/clients/new-clients/TIEA Connectors Pvt Ltd.webp', color: '#1e40af', sector: 'Industry' },
+  { name: 'Zumotur Biologics', initials: 'ZMT', logo: '/img/clients/new-clients/Zumotur Biologics Pvt Ltd.webp', color: '#0d9488', sector: 'Industry' },
+  { name: 'EPOCH Tech India', initials: 'EPO', logo: '/img/clients/new-clients/EPOCH Tech India Pvt Ltd.webp', color: '#4338ca', sector: 'Industry' },
+  { name: 'Bharat Forge Limited', initials: 'BFL', logo: '/img/clients/new-clients/Barath Forge Limited.webp', color: '#1e3a8a', sector: 'Industry' },
+
+  /* ─── New Builder / Developer / Architect clients ─── */
+  { name: 'Innovent Spaces', initials: 'INV', logo: '/img/clients/new-clients/Innovent Spaces Pvt Ltd.webp', color: '#0e7490', sector: 'Builder' },
+  { name: 'HM Construction', initials: 'HMC', logo: '/img/clients/new-clients/HM Constrution.webp', color: '#78350f', sector: 'Builder' },
+  { name: 'Vaishnavi AT-one', initials: 'VAT', logo: '/img/clients/new-clients/Vaishnavi AT-one Infrstructure LLP.webp', color: '#6d28d9', sector: 'Builder' },
+  { name: 'Interix Interior Management', initials: 'IIM', logo: '/img/clients/new-clients/Interix Interior Management Pvt Ltd.webp', color: '#0369a1', sector: 'Builder' },
+  { name: 'CliffDesign', initials: 'CLF', logo: '/img/clients/new-clients/CliffDesign Pvt Ltd.webp', color: '#334155', sector: 'Builder' },
+  { name: 'Knight Frank India', initials: 'KNF', logo: '/img/clients/new-clients/Kinght Frank India Pvt Ltd.webp', color: '#1e3a8a', sector: 'Builder' },
+  { name: 'Icon Design Consultants', initials: 'IDC', logo: '/img/clients/new-clients/Icon Design Consultans.webp', color: '#9333ea', sector: 'Builder' },
+  { name: 'RCA Studio', initials: 'RCA', logo: '/img/clients/new-clients/RCA Studio Pvt Ltd.webp', color: '#dc2626', sector: 'Builder' },
+  { name: 'Ocean Lifespaces India', initials: 'OLS', logo: '/img/clients/new-clients/Ocean Lifespacs India Pvt Ltd.webp', color: '#0284c7', sector: 'Builder' },
+  { name: 'Design Arc Interiors', initials: 'DAI', logo: '/img/clients/new-clients/Design Arc Interiors.webp', color: '#78350f', sector: 'Builder' },
 ];
 
 /* ─── Sector metadata ────────────────────────────────────── */
 const SECTORS = [
   {
-    key: 'Corporate'   as Sector,
+    key: 'Corporate' as Sector,
     label: 'Corporate & Tech',
     sublabel: 'Leading companies trust us for world-class HVAC in their campuses & offices',
     icon: Building2,
     color: '#0ea5e9',
   },
   {
-    key: 'Hospital'    as Sector,
+    key: 'Hospital' as Sector,
     label: 'Healthcare',
     sublabel: 'Precision climate control where every degree matters for patient care',
     icon: HeartPulse,
     color: '#10b981',
   },
   {
-    key: 'Hotel'       as Sector,
+    key: 'Hotel' as Sector,
     label: 'Hospitality',
     sublabel: 'Seamless comfort experiences engineered to impress every guest',
     icon: Hotel,
     color: '#f59e0b',
   },
+
   {
-    key: 'Institution' as Sector,
-    label: 'Education',
-    sublabel: 'Optimal learning environments built for focus, year-round',
-    icon: GraduationCap,
-    color: '#8b5cf6',
-  },
-  {
-    key: 'Industry'    as Sector,
+    key: 'Industry' as Sector,
     label: 'Industrial',
     sublabel: 'Heavy-duty cooling systems built for demanding operations',
     icon: Factory,
     color: '#f97316',
   },
   {
-    key: 'Builder'     as Sector,
+    key: 'Builder' as Sector,
     label: 'Builders & Developers',
     sublabel: 'Trusted by leading real-estate developers and workspace providers across Bangalore',
     icon: HardHat,
@@ -128,9 +178,9 @@ const SECTORS = [
 
 /* ─── ClientCard ─────────────────────────────────────────── */
 function ClientCard({ client }: { readonly client: Client }) {
-  const cardRef    = useRef<HTMLDivElement>(null);
-  const popupRef   = useRef<HTMLDivElement>(null);
-  const tweenRef   = useRef<gsap.core.Tween | null>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const popupRef = useRef<HTMLDivElement>(null);
+  const tweenRef = useRef<gsap.core.Tween | null>(null);
 
   const showPopup = () => {
     if (!popupRef.current) return;
@@ -234,8 +284,8 @@ interface SectorSectionProps {
 }
 function SectorSection({ sector, sectorClients, index }: Readonly<SectorSectionProps>) {
   const sectionRef = useRef<HTMLElement>(null);
-  const numRef     = useRef<HTMLSpanElement>(null);
-  const Icon       = sector.icon;
+  const numRef = useRef<HTMLSpanElement>(null);
+  const Icon = sector.icon;
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -254,8 +304,10 @@ function SectorSection({ sector, sectorClients, index }: Readonly<SectorSectionP
       gsap.fromTo(
         '.sector-header-' + sector.key + ' > *',
         { x: -40, opacity: 0 },
-        { x: 0, opacity: 1, stagger: 0.1, duration: 0.75, ease: 'power3.out', immediateRender: false,
-          scrollTrigger: { trigger: sectionRef.current, start: 'top 82%', once: true } },
+        {
+          x: 0, opacity: 1, stagger: 0.1, duration: 0.75, ease: 'power3.out', immediateRender: false,
+          scrollTrigger: { trigger: sectionRef.current, start: 'top 82%', once: true }
+        },
       );
 
       /* Cards stagger */
@@ -264,10 +316,12 @@ function SectorSection({ sector, sectorClients, index }: Readonly<SectorSectionP
       gsap.fromTo(
         cards,
         { y: 50, opacity: 0, scale: 0.94 },
-        { y: 0, opacity: 1, scale: 1,
+        {
+          y: 0, opacity: 1, scale: 1,
           stagger: { each: 0.04, from: 'start' },
           duration: 0.55, ease: 'power3.out', immediateRender: false,
-          scrollTrigger: { trigger: sectionRef.current, start: 'top 75%', once: true } },
+          scrollTrigger: { trigger: sectionRef.current, start: 'top 75%', once: true }
+        },
       );
     }, sectionRef);
     return () => ctx.revert();
@@ -281,7 +335,6 @@ function SectorSection({ sector, sectorClients, index }: Readonly<SectorSectionP
       ref={sectionRef}
       id={sector.key.toLowerCase()}
       className="relative py-20"
-      style={{ background: isEven ? '' : '' }}
     >
       {/* Subtle bg tint layer */}
       <div
@@ -350,7 +403,7 @@ function SectorSection({ sector, sectorClients, index }: Readonly<SectorSectionP
 /* ─── Page ───────────────────────────────────────────────── */
 export default function ClientsPage() {
   const heroRef = useRef<HTMLDivElement>(null);
-  const bgRef   = useRef<HTMLDivElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
 
   /* Hero parallax + entrance */
   useEffect(() => {

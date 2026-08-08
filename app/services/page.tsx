@@ -28,7 +28,7 @@ const services = [
     rating: 4.9,
     reviews: '1.2k',
     desc: 'Complete Blue Star range — split, cassette, window, tower and VRF systems. Expert guidance to find the right model for your space and budget.',
-    features: ['Full Blue Star product catalogue', 'Capacity guidance (0.75T–5T)', 'Inverter & BEE rated options','Energy-saving features'],
+    features: ['Full Blue Star product catalogue', 'Capacity guidance (0.75T–5T)', 'Inverter & BEE rated options', 'Energy-saving features'],
     ctaLink: '/products',
     ctaLabel: 'Explore Models',
     accent: 'sky',
@@ -92,7 +92,7 @@ const services = [
     rating: 4.8,
     reviews: '1.5k',
     desc: 'Chemical wash of filters, evaporator coil, blower, drain pan and condenser. Improves air quality and reduces electricity consumption by up to 15%.',
-    features: ['Filter cleaning and replacement','Evaporator coil wash', 'Blower deep clean', 'Drain pipe flush', 'Anti-bacterial treatment', 'Condenser cleaning'],
+    features: ['Filter cleaning and replacement', 'Evaporator coil wash', 'Blower deep clean', 'Drain pipe flush', 'Anti-bacterial treatment', 'Condenser cleaning'],
     ctaLink: '/contact',
     ctaLabel: 'Book Cleaning',
     accent: 'violet',
@@ -117,12 +117,12 @@ const services = [
 
 /* Color maps — full strings so Tailwind v4 picks them up */
 const colorMap: Record<string, { iconBg: string; chip: string; btn: string }> = {
-  sky:     { iconBg: 'bg-sky-500',     chip: 'bg-sky-50 text-sky-700 border-sky-200',     btn: 'bg-sky-500 hover:bg-sky-400 shadow-sky-200' },
-  cyan:    { iconBg: 'bg-cyan-500',    chip: 'bg-cyan-50 text-cyan-700 border-cyan-200',    btn: 'bg-cyan-500 hover:bg-cyan-400 shadow-cyan-200' },
-  orange:  { iconBg: 'bg-orange-500',  chip: 'bg-orange-50 text-orange-700 border-orange-200',  btn: 'bg-orange-500 hover:bg-orange-400 shadow-orange-200' },
+  sky: { iconBg: 'bg-sky-500', chip: 'bg-sky-50 text-sky-700 border-sky-200', btn: 'bg-sky-500 hover:bg-sky-400 shadow-sky-200' },
+  cyan: { iconBg: 'bg-cyan-500', chip: 'bg-cyan-50 text-cyan-700 border-cyan-200', btn: 'bg-cyan-500 hover:bg-cyan-400 shadow-cyan-200' },
+  orange: { iconBg: 'bg-orange-500', chip: 'bg-orange-50 text-orange-700 border-orange-200', btn: 'bg-orange-500 hover:bg-orange-400 shadow-orange-200' },
   emerald: { iconBg: 'bg-emerald-500', chip: 'bg-emerald-50 text-emerald-700 border-emerald-200', btn: 'bg-emerald-500 hover:bg-emerald-400 shadow-emerald-200' },
-  violet:  { iconBg: 'bg-violet-500',  chip: 'bg-violet-50 text-violet-700 border-violet-200',  btn: 'bg-violet-500 hover:bg-violet-400 shadow-violet-200' },
-  teal:    { iconBg: 'bg-teal-500',    chip: 'bg-teal-50 text-teal-700 border-teal-200',    btn: 'bg-teal-500 hover:bg-teal-400 shadow-teal-200' },
+  violet: { iconBg: 'bg-violet-500', chip: 'bg-violet-50 text-violet-700 border-violet-200', btn: 'bg-violet-500 hover:bg-violet-400 shadow-violet-200' },
+  teal: { iconBg: 'bg-teal-500', chip: 'bg-teal-50 text-teal-700 border-teal-200', btn: 'bg-teal-500 hover:bg-teal-400 shadow-teal-200' },
 };
 
 const steps = [
@@ -136,47 +136,56 @@ const trust = [
   { Icon: BadgeCheck, title: 'Blue Star Authorized', desc: 'Official dealer & certified service partner.' },
   { Icon: Shield, title: 'Genuine Parts Only', desc: 'Only OEM Blue Star spare parts — always.' },
   { Icon: Clock, title: 'Same-Day Service', desc: 'Most bookings fulfilled the same day.' },
-  { Icon: Award, title: '10+ Years Experience', desc: 'A decade of expert AC service in Chennai.' },
+  { Icon: Award, title: '10+ Years Experience', desc: 'A decade of expert AC service.' },
   { Icon: ThumbsUp, title: '5,000+ Customers', desc: 'Trusted by thousands of homes and businesses.' },
   { Icon: Headphones, title: '24 / 7 Support', desc: 'Our team is available round the clock.' },
 ];
 
 /* Pick an icon that matches each feature's wording (falls back to a check). */
+const FEATURE_ICON_RULES: Array<{ keywords: string[]; icon: typeof Check; allRequired?: boolean }> = [
+  { keywords: ['certified', 'technician'], icon: UserCheck },
+  { keywords: ['copper'], icon: Wrench },
+  { keywords: ['electric', 'wiring'], icon: Plug },
+  { keywords: ['gas', 'warranty'], icon: ShieldCheck, allRequired: true },
+  { keywords: ['pressure', 'gas charging', 'gas'], icon: Gauge },
+  { keywords: ['trial', 'demo'], icon: Play },
+  { keywords: ['model'], icon: Layers },
+  { keywords: ['spare'], icon: Package },
+  { keywords: ['warranty'], icon: ShieldCheck },
+  { keywords: ['same-day', 'same day'], icon: Clock },
+  { keywords: ['diagnosis', 'report'], icon: ClipboardCheck },
+  { keywords: ['brand'], icon: Wrench },
+  { keywords: ['per year', 'services per'], icon: CalendarCheck },
+  { keywords: ['priority', 'breakdown'], icon: Zap },
+  { keywords: ['manager'], icon: Headphones },
+  { keywords: ['filter'], icon: Filter },
+  { keywords: ['coil', 'evaporator'], icon: Snowflake },
+  { keywords: ['blower'], icon: Fan },
+  { keywords: ['drain'], icon: Droplets },
+  { keywords: ['bacterial', 'anti-'], icon: Sparkles },
+  { keywords: ['condenser'], icon: Wind },
+  { keywords: ['leak'], icon: Search },
+  { keywords: ['r-32', 'r-410', 'r-22', 'refrigerant'], icon: FlaskConical },
+  { keywords: ['performance', 'verification'], icon: Activity },
+  { keywords: ['eco', 'energy', 'saving'], icon: Leaf },
+  { keywords: ['catalogue', 'product', 'range'], icon: LayoutGrid },
+  { keywords: ['capacity'], icon: Gauge },
+  { keywords: ['inverter', 'bee', 'rated'], icon: BadgeCheck },
+];
+
 function featureIcon(text: string) {
   const t = text.toLowerCase();
-  if (t.includes('certified') || t.includes('technician')) return UserCheck;
-  if (t.includes('copper')) return Wrench;
-  if (t.includes('electric') || t.includes('wiring')) return Plug;
-  if (t.includes('gas') && t.includes('warranty')) return ShieldCheck;
-  if (t.includes('pressure') || t.includes('gas charging') || t.includes('gas')) return Gauge;
-  if (t.includes('trial') || t.includes('demo')) return Play;
-  if (t.includes('model')) return Layers;
-  if (t.includes('spare')) return Package;
-  if (t.includes('warranty')) return ShieldCheck;
-  if (t.includes('same-day') || t.includes('same day')) return Clock;
-  if (t.includes('diagnosis') || t.includes('report')) return ClipboardCheck;
-  if (t.includes('brand')) return Wrench;
-  if (t.includes('per year') || t.includes('services per')) return CalendarCheck;
-  if (t.includes('priority') || t.includes('breakdown')) return Zap;
-  if (t.includes('manager')) return Headphones;
-  if (t.includes('filter')) return Filter;
-  if (t.includes('coil') || t.includes('evaporator')) return Snowflake;
-  if (t.includes('blower')) return Fan;
-  if (t.includes('drain')) return Droplets;
-  if (t.includes('bacterial') || t.includes('anti-')) return Sparkles;
-  if (t.includes('condenser')) return Wind;
-  if (t.includes('leak')) return Search;
-  if (t.includes('r-32') || t.includes('r-410') || t.includes('r-22') || t.includes('refrigerant')) return FlaskConical;
-  if (t.includes('performance') || t.includes('verification')) return Activity;
-  if (t.includes('eco') || t.includes('energy') || t.includes('saving')) return Leaf;
-  if (t.includes('catalogue') || t.includes('product') || t.includes('range')) return LayoutGrid;
-  if (t.includes('capacity')) return Gauge;
-  if (t.includes('inverter') || t.includes('bee') || t.includes('rated')) return BadgeCheck;
+  for (const rule of FEATURE_ICON_RULES) {
+    const match = rule.allRequired
+      ? rule.keywords.every((kw) => t.includes(kw))
+      : rule.keywords.some((kw) => t.includes(kw));
+    if (match) return rule.icon;
+  }
   return Check;
 }
 
 /* ─── Service card — image on the left, features with icons on the right ─── */
-function ServiceCard({ s, index }: { s: typeof services[0]; index: number }) {
+function ServiceCard({ s, index }: Readonly<{ s: typeof services[0]; index: number }>) {
   const c = colorMap[s.accent];
   return (
     <div
@@ -295,7 +304,7 @@ export default function ServicesPage() {
 
         <div className="relative mx-auto max-w-3xl text-center">
           <span className="h-in inline-flex items-center gap-2 rounded-full border border-sky-500/30 bg-sky-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-sky-400">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-sky-400" />
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-sky-400" />{' '}
             Blue Star Authorized Dealer · Bangalore
           </span>
 

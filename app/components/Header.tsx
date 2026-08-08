@@ -15,10 +15,10 @@ const navLinks = [
 ];
 
 export default function Header() {
-  const [dark, setDark]         = useState(false);
+  const [dark, setDark] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [visible, setVisible]   = useState(true);
-  const lastScrollY              = useRef(0);
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
   /* ── Dark mode ─────────────────────────────────────────────── */
   useEffect(() => {
@@ -52,9 +52,8 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full bg-white dark:bg-gray-900 shadow-md transition-transform duration-300 ${
-        visible ? 'translate-y-0' : '-translate-y-full'
-      }`}
+      className={`fixed top-0 z-50 w-full bg-white dark:bg-gray-900 shadow-md transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -98,6 +97,7 @@ export default function Header() {
 
             {/* Dark / Light Toggle */}
             <button
+              type="button"
               onClick={() => setDark(!dark)}
               aria-label="Toggle dark mode"
               className={`ml-2 p-2 rounded-full transition-colors ${iconColor}`}
@@ -117,6 +117,7 @@ export default function Header() {
           {/* Mobile: toggle + hamburger */}
           <div className="flex md:hidden items-center gap-2">
             <button
+              type="button"
               onClick={() => setDark(!dark)}
               aria-label="Toggle dark mode"
               className={`p-2 rounded-full transition-colors ${iconColor}`}
@@ -133,6 +134,7 @@ export default function Header() {
             </button>
 
             <button
+              type="button"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
               className={`p-2 rounded-md transition-colors ${linkColor}`}

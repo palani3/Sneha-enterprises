@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { PRODUCTS } from './lib/productsData';
 
 export const dynamic = 'force-static';
 
@@ -6,6 +7,13 @@ const BASE_URL = 'https://www.sneha-enterprises.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
+
+  const productPages = PRODUCTS.map((p) => ({
+    url: `${BASE_URL}/products/${p.id}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
 
   return [
     {
@@ -32,6 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
+    ...productPages,
     {
       url: `${BASE_URL}/clients`,
       lastModified: now,

@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
-  ArrowRight, Phone, CheckCircle2,
+  ArrowRight, CheckCircle2,
   Zap, Shield, Star, ChevronRight, X, ChevronLeft,
 } from 'lucide-react';
 import { PRODUCTS } from '../../lib/productsData';
@@ -23,13 +23,13 @@ function Lightbox({
   onClose,
   onPrev,
   onNext,
-}: {
+}: Readonly<{
   images: string[];
   index: number;
   onClose: () => void;
   onPrev: () => void;
   onNext: () => void;
-}) {
+}>) {
   return (
     <AnimatePresence>
       <motion.div
@@ -65,6 +65,7 @@ function Lightbox({
         </motion.div>
 
         <button
+          type="button"
           onClick={onClose}
           className="absolute top-5 right-5 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
         >
@@ -73,6 +74,7 @@ function Lightbox({
 
         {index > 0 && (
           <button
+            type="button"
             onClick={(e) => { e.stopPropagation(); onPrev(); }}
             className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
           >
@@ -82,6 +84,7 @@ function Lightbox({
 
         {index < images.length - 1 && (
           <button
+            type="button"
             onClick={(e) => { e.stopPropagation(); onNext(); }}
             className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
           >
@@ -98,11 +101,11 @@ function ProductGallery({
   images,
   accentColor,
   glowColor,
-}: {
+}: Readonly<{
   images: string[];
   accentColor: string;
   glowColor: string;
-}) {
+}>) {
   const [active, setActive] = useState(0);
   const [lightbox, setLightbox] = useState<number | null>(null);
 
@@ -120,8 +123,9 @@ function ProductGallery({
           className="absolute -inset-6 rounded-3xl blur-3xl opacity-20 pointer-events-none"
           style={{ background: glowColor }}
         />
-        <div
-          className="relative rounded-3xl overflow-hidden bg-gray-100 dark:bg-gray-800 aspect-[4/3] cursor-zoom-in group"
+        <button
+          type="button"
+          className="relative rounded-3xl overflow-hidden bg-gray-100 dark:bg-gray-800 aspect-[4/3] cursor-zoom-in group w-full"
           onClick={() => openLightbox(active)}
         >
           <AnimatePresence mode="wait">
@@ -149,17 +153,17 @@ function ProductGallery({
               Click to expand
             </span>
           </div>
-        </div>
+        </button>
       </div>
 
       <div className="mt-3 grid grid-cols-7 gap-2">
         {images.map((src, i) => (
           <button
+            type="button"
             key={src}
             onClick={() => setActive(i)}
-            className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all duration-200 ${
-              active === i ? 'scale-105 shadow-lg' : 'border-transparent opacity-60 hover:opacity-90'
-            }`}
+            className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all duration-200 ${active === i ? 'scale-105 shadow-lg' : 'border-transparent opacity-60 hover:opacity-90'
+              }`}
             style={active === i ? { borderColor: accentColor } : {}}
           >
             <Image src={src} alt={`Thumbnail ${i + 1}`} fill className="object-cover" sizes="80px" />
@@ -169,9 +173,9 @@ function ProductGallery({
 
       <div className="mt-4 grid grid-cols-3 gap-3">
         {[
-          { icon: Shield, label: 'Genuine BlueStar' },
-          { icon: Zap,    label: 'Expert Install'   },
-          { icon: Star,   label: `${getYearsExp()}+ Yrs Service` },
+          { icon: Shield, label: 'Genuine Blue Star' },
+          { icon: Zap, label: 'Expert Install' },
+          { icon: Star, label: `${getYearsExp()}+ Yrs Service` },
         ].map(({ icon: Icon, label }) => (
           <div
             key={label}
@@ -197,28 +201,28 @@ function ProductGallery({
 }
 
 /* ─── Client Page ───────────────────────────────────────────────── */
-export default function ProductDetailClient({ id }: { id: string }) {
+export default function ProductDetailClient({ id }: Readonly<{ id: string }>) {
   const product = PRODUCTS.find((p) => p.id === id);
   if (!product) notFound();
 
   const others = PRODUCTS.filter((p) => p.id !== id).slice(0, 3);
 
-  const heroRef        = useRef<HTMLElement>(null);
-  const heroBgRef      = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const heroBgRef = useRef<HTMLDivElement>(null);
   const heroContentRef = useRef<HTMLDivElement>(null);
-  const heroGlowRef    = useRef<HTMLDivElement>(null);
-  const galleryRef     = useRef<HTMLElement>(null);
+  const heroGlowRef = useRef<HTMLDivElement>(null);
+  const galleryRef = useRef<HTMLElement>(null);
   const gallerySectionRef = useRef<HTMLDivElement>(null);
-  const infoSectionRef    = useRef<HTMLDivElement>(null);
-  const featuresRef    = useRef<HTMLElement>(null);
-  const featureCardsRef= useRef<HTMLDivElement>(null);
-  const storyRef       = useRef<HTMLElement>(null);
-  const storyBgRef     = useRef<HTMLDivElement>(null);
-  const storyContentRef= useRef<HTMLDivElement>(null);
-  const othersRef      = useRef<HTMLElement>(null);
-  const ctaRef         = useRef<HTMLElement>(null);
-  const ctaBgRef       = useRef<HTMLDivElement>(null);
-  const mainRef        = useRef<HTMLElement>(null);
+  const infoSectionRef = useRef<HTMLDivElement>(null);
+  const featuresRef = useRef<HTMLElement>(null);
+  const featureCardsRef = useRef<HTMLDivElement>(null);
+  const storyRef = useRef<HTMLElement>(null);
+  const storyBgRef = useRef<HTMLDivElement>(null);
+  const storyContentRef = useRef<HTMLDivElement>(null);
+  const othersRef = useRef<HTMLElement>(null);
+  const ctaRef = useRef<HTMLElement>(null);
+  const ctaBgRef = useRef<HTMLDivElement>(null);
+  const mainRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const raf = requestAnimationFrame(() => {
@@ -251,23 +255,29 @@ export default function ProductDetailClient({ id }: { id: string }) {
         if (gallerySectionRef.current) {
           gsap.fromTo(gallerySectionRef.current,
             { x: -80, autoAlpha: 0 },
-            { x: 0, autoAlpha: 1, duration: 1, ease: 'power3.out',
-              scrollTrigger: { trigger: galleryRef.current, start: 'top 85%', toggleActions: 'play none none none' } },
+            {
+              x: 0, autoAlpha: 1, duration: 1, ease: 'power3.out',
+              scrollTrigger: { trigger: galleryRef.current, start: 'top 85%', toggleActions: 'play none none none' }
+            },
           );
         }
         if (infoSectionRef.current) {
           gsap.fromTo(infoSectionRef.current,
             { x: 80, autoAlpha: 0 },
-            { x: 0, autoAlpha: 1, duration: 1, ease: 'power3.out',
-              scrollTrigger: { trigger: galleryRef.current, start: 'top 85%', toggleActions: 'play none none none' } },
+            {
+              x: 0, autoAlpha: 1, duration: 1, ease: 'power3.out',
+              scrollTrigger: { trigger: galleryRef.current, start: 'top 85%', toggleActions: 'play none none none' }
+            },
           );
         }
         const featureCards = featureCardsRef.current?.children;
         if (featureCards && featureCards.length > 0) {
           gsap.fromTo(featureCards,
             { y: 80, autoAlpha: 0, rotateX: 12 },
-            { y: 0, autoAlpha: 1, rotateX: 0, stagger: 0.1, duration: 0.8, ease: 'power3.out',
-              scrollTrigger: { trigger: featuresRef.current, start: 'top 80%', toggleActions: 'play none none none' } },
+            {
+              y: 0, autoAlpha: 1, rotateX: 0, stagger: 0.1, duration: 0.8, ease: 'power3.out',
+              scrollTrigger: { trigger: featuresRef.current, start: 'top 80%', toggleActions: 'play none none none' }
+            },
           );
         }
         if (storyBgRef.current) {
@@ -280,16 +290,20 @@ export default function ProductDetailClient({ id }: { id: string }) {
           gsap.fromTo(
             storyContentRef.current.children,
             { y: 40, autoAlpha: 0 },
-            { y: 0, autoAlpha: 1, stagger: 0.12, duration: 0.9, ease: 'power3.out',
-              scrollTrigger: { trigger: storyRef.current, start: 'top 75%', toggleActions: 'play none none none' } },
+            {
+              y: 0, autoAlpha: 1, stagger: 0.12, duration: 0.9, ease: 'power3.out',
+              scrollTrigger: { trigger: storyRef.current, start: 'top 75%', toggleActions: 'play none none none' }
+            },
           );
         }
         const otherCards = othersRef.current?.querySelectorAll('[data-other-card]');
         if (otherCards && otherCards.length > 0) {
           gsap.fromTo(otherCards,
             { y: 50, autoAlpha: 0 },
-            { y: 0, autoAlpha: 1, stagger: 0.15, duration: 0.8, ease: 'power3.out',
-              scrollTrigger: { trigger: othersRef.current, start: 'top 85%', toggleActions: 'play none none none' } },
+            {
+              y: 0, autoAlpha: 1, stagger: 0.15, duration: 0.8, ease: 'power3.out',
+              scrollTrigger: { trigger: othersRef.current, start: 'top 85%', toggleActions: 'play none none none' }
+            },
           );
         }
         if (ctaBgRef.current) {
@@ -404,9 +418,8 @@ export default function ProductDetailClient({ id }: { id: string }) {
               {product.specRows.map((row, i) => (
                 <div
                   key={row.label}
-                  className={`flex items-center gap-4 px-4 py-2.5 border-b border-gray-50 dark:border-white/5 last:border-b-0 ${
-                    i % 2 === 0 ? 'bg-white dark:bg-transparent' : 'bg-gray-50/60 dark:bg-white/[0.02]'
-                  }`}
+                  className={`flex items-center gap-4 px-4 py-2.5 border-b border-gray-50 dark:border-white/5 last:border-b-0 ${i % 2 === 0 ? 'bg-white dark:bg-transparent' : 'bg-gray-50/60 dark:bg-white/[0.02]'
+                    }`}
                 >
                   <span className="w-44 flex-shrink-0 text-[11px] font-bold text-gray-500 dark:text-gray-400">{row.label}</span>
                   <span className="text-[11px] text-gray-800 dark:text-gray-200 font-medium">{row.value}</span>
@@ -415,9 +428,9 @@ export default function ProductDetailClient({ id }: { id: string }) {
             </div>
             <div className="grid grid-cols-3 gap-3">
               {[
-                { icon: Shield, label: 'Genuine BlueStar' },
-                { icon: Zap,    label: 'Expert Install'   },
-                { icon: Star,   label: `${getYearsExp()}+ Yrs Service` },
+                { icon: Shield, label: 'Genuine Blue Star' },
+                { icon: Zap, label: 'Expert Install' },
+                { icon: Star, label: `${getYearsExp()}+ Yrs Service` },
               ].map(({ icon: Icon, label }) => (
                 <div key={label} className="flex items-center gap-2 rounded-xl border border-gray-100 dark:border-white/8 bg-gray-50 dark:bg-white/[0.03] px-3 py-2.5">
                   <Icon className="w-4 h-4 flex-shrink-0" style={{ color: product.accentColor }} />

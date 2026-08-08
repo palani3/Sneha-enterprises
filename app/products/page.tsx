@@ -10,9 +10,9 @@ import { getYearsExp } from '../lib/founding';
 /* ─── Category filters ──────────────────────────────────────────── */
 const CATEGORIES = [
   { label: 'All Products', value: 'all' },
-  { label: 'Residential',  value: 'residential',  ids: ['split'] },
-  { label: 'Commercial',   value: 'commercial',   ids: ['cassette', 'package'] },
-  { label: 'Industrial',   value: 'industrial',   ids: ['chiller', 'screw', 'vrf'] },
+  { label: 'Residential', value: 'residential', ids: ['split'] },
+  { label: 'Commercial', value: 'commercial', ids: ['cassette', 'package'] },
+  { label: 'Industrial', value: 'industrial', ids: ['chiller', 'screw', 'vrf'] },
 ];
 
 /* ─── Product Card ──────────────────────────────────────────────── */
@@ -89,9 +89,8 @@ function ProductCard({ product }: Readonly<{ product: ProductData }>) {
           {product.specRows.slice(0, 3).map((row, i) => (
             <div
               key={row.label}
-              className={`flex items-center justify-between px-3 py-2 text-[11px] border-b border-gray-50 dark:border-white/5 last:border-b-0 ${
-                i % 2 === 0 ? 'bg-gray-50/50 dark:bg-white/[0.02]' : 'bg-white dark:bg-transparent'
-              }`}
+              className={`flex items-center justify-between px-3 py-2 text-[11px] border-b border-gray-50 dark:border-white/5 last:border-b-0 ${i % 2 === 0 ? 'bg-gray-50/50 dark:bg-white/[0.02]' : 'bg-white dark:bg-transparent'
+                }`}
             >
               <span className="font-semibold text-gray-500 dark:text-gray-400">{row.label}</span>
               <span className="font-bold text-gray-800 dark:text-gray-200 text-right ml-2">{row.value}</span>
@@ -130,9 +129,9 @@ export default function ProductsPage() {
   const filtered = activeFilter === 'all'
     ? PRODUCTS
     : PRODUCTS.filter((p) => {
-        const cat = CATEGORIES.find((c) => c.value === activeFilter);
-        return cat?.ids?.includes(p.id);
-      });
+      const cat = CATEGORIES.find((c) => c.value === activeFilter);
+      return cat?.ids?.includes(p.id);
+    });
 
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
@@ -167,7 +166,7 @@ export default function ProductsPage() {
             </span>
           </h1>
           <p className="max-w-xl mx-auto text-base text-white/40 leading-relaxed mb-10">
-            Complete range of BlueStar air conditioning systems — from compact residential splits to industrial-scale chilled water plants.
+            Complete range of Blue Star air conditioning systems — from compact residential splits to industrial-scale chilled water plants.
           </p>
 
           {/* Stats */}
@@ -175,9 +174,9 @@ export default function ProductsPage() {
             {[
               { val: `${getYearsExp()}+`, lbl: 'Years' },
               { val: '10,000+', lbl: 'Tons Installed' },
-              { val: '45+',     lbl: 'Engineers' },
-              { val: '100+',    lbl: 'Clients' },
-              { val: '6',       lbl: 'Product Lines' },
+              { val: '45+', lbl: 'Engineers' },
+              { val: '100+', lbl: 'Clients' },
+              { val: '6', lbl: 'Product Lines' },
             ].map((s) => (
               <div key={s.lbl} className="px-6 py-3 bg-white/[0.04] text-center">
                 <p className="text-lg font-black text-white">{s.val}</p>
@@ -197,13 +196,13 @@ export default function ProductsPage() {
             <SlidersHorizontal className="w-4 h-4 flex-shrink-0 text-gray-400" />
             {CATEGORIES.map((cat) => (
               <button
+                type="button"
                 key={cat.value}
                 onClick={() => setActiveFilter(cat.value)}
-                className={`flex-shrink-0 rounded-full px-4 py-1.5 text-xs font-bold transition-all ${
-                  activeFilter === cat.value
-                    ? 'bg-sky-500 text-white shadow-lg shadow-sky-500/30'
-                    : 'bg-gray-100 dark:bg-white/[0.06] text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-white/10'
-                }`}
+                className={`flex-shrink-0 rounded-full px-4 py-1.5 text-xs font-bold transition-all ${activeFilter === cat.value
+                  ? 'bg-sky-500 text-white shadow-lg shadow-sky-500/30'
+                  : 'bg-gray-100 dark:bg-white/[0.06] text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-white/10'
+                  }`}
               >
                 {cat.label}
               </button>
@@ -238,14 +237,14 @@ export default function ProductsPage() {
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-center text-[10px] font-black uppercase tracking-widest text-sky-500 mb-2">Why Sneha Enterprises</p>
           <h2 className="text-center text-2xl md:text-3xl font-black text-gray-900 dark:text-white mb-10">
-            Bangalore&apos;s Most Trusted BlueStar Dealer
+            Bangalore&apos;s Most Trusted Blue Star Dealer
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { icon: Star,     title: 'Genuine Products',   desc: 'Authorised BlueStar dealer — 100% authentic products with full warranty.' },
-              { icon: Phone,    title: 'Expert Installation', desc: `AMC-certified engineers with ${getYearsExp()}+ years of hands-on installation experience.` },
+              { icon: Star, title: 'Genuine Products', desc: 'Authorised Blue Star dealer — 100% authentic products with full warranty.' },
+              { icon: Phone, title: 'Expert Installation', desc: `AMC-certified engineers with ${getYearsExp()}+ years of hands-on installation experience.` },
               { icon: ArrowRight, title: 'End-to-End Service', desc: 'Site survey → design → supply → install → commissioning — all under one roof.' },
-              { icon: Download, title: 'AMC Contracts',      desc: 'Annual maintenance contracts to keep your systems running at peak efficiency.' },
+              { icon: Download, title: 'AMC Contracts', desc: 'Annual maintenance contracts to keep your systems running at peak efficiency.' },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="text-center">
                 <div className="w-10 h-10 rounded-2xl bg-sky-50 dark:bg-sky-500/10 flex items-center justify-center mx-auto mb-3">

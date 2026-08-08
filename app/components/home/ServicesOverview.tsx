@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
-  ArrowRight, CheckCircle2, Phone,
+  ArrowRight, CheckCircle2,
   Wrench, Zap, Thermometer, ShieldCheck, BadgeInfo, Headphones,
   SlidersHorizontal,
 } from 'lucide-react';
@@ -27,10 +27,10 @@ const SERVICES = [
     badge: 'Most Popular',
     category: 'Installation',
     icon: Wrench,
-    title: 'AC Installation',
-    tagline: 'All Types of Air Conditioning Systems',
-    desc: 'We supply and install all types of air conditioning systems — from split and cassette ACs to large-scale VRF and chilled water systems. Certified engineers ensure flawless setup.',
-    highlights: ['Split, Cassette & VRF systems', 'Certified installation engineers', 'Full site survey & load calc', 'Handover documentation'],
+    title: 'AC Installation in Bangalore',
+    tagline: 'Split, Cassette, VRF & Ducted AC Installation',
+    desc: 'Professional AC installation services in Bangalore — from residential split ACs to commercial VRF systems, cassette units, and chilled water plants. Blue Star authorized installation with certified engineers, full site survey, and load calculation included.',
+    highlights: ['Split, Cassette & VRF systems', 'Certified installation engineers', 'Full site survey & load calc', 'Same-day installation available'],
   },
   {
     id: 'service-maintenance',
@@ -42,10 +42,10 @@ const SERVICES = [
     badge: 'Essential',
     category: 'Maintenance',
     icon: Zap,
-    title: 'Service & Maintenance',
-    tagline: 'Regular Intervals for Smooth Functioning',
-    desc: 'We repair and maintain your AC systems at regular intervals to ensure proper functioning year-round. Our 45-strong team covers all brands with genuine spare parts.',
-    highlights: ['Preventive maintenance schedules', 'All brands serviced', 'Genuine spare parts', 'Performance audit reports'],
+    title: 'AC Service & Repair Bangalore',
+    tagline: 'Expert AC Servicing, Gas Charging & Repair',
+    desc: 'Comprehensive AC service and repair in Bangalore — preventive maintenance, gas charging, compressor repair, PCB repair, and deep cleaning. Our 45+ trained engineers service all brands with genuine Blue Star spare parts.',
+    highlights: ['Preventive maintenance schedules', 'Gas charging & compressor repair', 'Genuine Blue Star spare parts', 'Performance audit reports'],
   },
   {
     id: 'hot-cold',
@@ -57,10 +57,10 @@ const SERVICES = [
     badge: 'Year-Round',
     category: 'Climate Control',
     icon: Thermometer,
-    title: 'Hot & Cold',
-    tagline: 'Both Heating & Cooling Solutions',
-    desc: 'Whether you need powerful summer cooling or comfortable winter heating, our dual-mode heat-pump systems deliver year-round climate comfort.',
-    highlights: ['Dual-mode heating & cooling', 'Heat pump technology', 'Energy-efficient operation', 'Climate-adaptive systems'],
+    title: 'Heating & Cooling Solutions',
+    tagline: 'Heat Pump & Dual-Mode HVAC Systems',
+    desc: 'Year-round climate control solutions for Bangalore offices and commercial spaces — energy-efficient heat pumps, precision cooling for server rooms, and dual-mode HVAC systems for temperature-sensitive environments.',
+    highlights: ['Dual-mode heating & cooling', 'Heat pump technology', 'Server room precision cooling', 'Energy-efficient BEE 5-star rated'],
   },
   {
     id: 'safety-secure',
@@ -72,10 +72,10 @@ const SERVICES = [
     badge: 'Your Safety',
     category: 'Safety',
     icon: ShieldCheck,
-    title: 'Safety & Secure',
-    tagline: 'Vaccinated, Geared & Sanitized Engineers',
-    desc: 'All our engineers are vaccinated, equipped with proper safety gear, and sanitize the work area after every visit. Every technician carries a verified Sneha Enterprises ID.',
-    highlights: ['Fully vaccinated team', 'Complete safety gear', 'Post-service sanitization', 'Background-checked engineers'],
+    title: 'Safety & Secure Service',
+    tagline: 'Background-Verified & Safety-Compliant Engineers',
+    desc: 'All Sneha Enterprises engineers are background-verified, fully vaccinated, equipped with safety gear, and sanitize the work area post-service. Every technician carries a verified company ID for your peace of mind.',
+    highlights: ['Fully vaccinated team', 'Complete safety gear & PPE', 'Post-service sanitization', 'Background-verified engineers'],
   },
   {
     id: 'sales-marketing',
@@ -87,10 +87,10 @@ const SERVICES = [
     badge: 'Expert Advice',
     category: 'Consultation',
     icon: BadgeInfo,
-    title: 'Sales & Marketing',
-    tagline: 'Right Solution for Every Client',
-    desc: 'Our experienced team assists you in finding the right AC solution tailored to your space, budget, and requirements — honest guidance, no pressure selling.',
-    highlights: ['Expert product consultation', 'Load calculation & sizing', 'Budget-optimized solutions', 'Flexible payment options'],
+    title: 'Free AC Consultation Bangalore',
+    tagline: 'Free Site Survey & AC Load Calculation',
+    desc: 'Get expert AC consultation with free site survey and load calculation in Bangalore. Our team recommends the right Blue Star AC system for your space, budget, and energy requirements — no-obligation quotes with flexible payment options.',
+    highlights: ['Free site survey & consultation', 'Load calculation & sizing', 'Budget-optimized AC solutions', 'Flexible EMI payment options'],
   },
   {
     id: 'customer-care',
@@ -102,24 +102,24 @@ const SERVICES = [
     badge: 'Always On',
     category: 'Support',
     icon: Headphones,
-    title: '24/7 Customer Care',
-    tagline: 'Always Here When You Need Us',
-    desc: 'Dedicated engineers attend every registered complaint at the earliest. Round-the-clock emergency support with real-time tracking for all service requests.',
-    highlights: ['24/7 emergency hotline', 'Dedicated service team', 'Fast response time', 'Complaint tracking system'],
+    title: '24/7 AC Support Bangalore',
+    tagline: 'Round-the-Clock Emergency AC Repair',
+    desc: '24/7 emergency AC support across Bangalore — dedicated engineers attend every breakdown call with priority response. Real-time service tracking, same-day resolution for AMC clients, and guaranteed response within 2 hours.',
+    highlights: ['24/7 emergency breakdown support', 'Guaranteed 2-hour response', 'Real-time complaint tracking', 'Priority service for AMC clients'],
   },
 ];
 
 const FILTERS = [
-  { label: 'All',          value: 'all' },
+  { label: 'All', value: 'all' },
   { label: 'Installation', value: 'Installation' },
-  { label: 'Maintenance',  value: 'Maintenance' },
-  { label: 'Support',      value: 'Support' },
+  { label: 'Maintenance', value: 'Maintenance' },
+  { label: 'Support', value: 'Support' },
 ];
 
 /* ─── Service Card ─────────────────────────────────────────────── */
-function ServiceCard({ s, index }: { s: typeof SERVICES[0]; index: number }) {
+function ServiceCard({ s, index }: Readonly<{ s: typeof SERVICES[0]; index: number }>) {
   const cardRef = useRef<HTMLDivElement>(null);
-  const Icon    = s.icon;
+  const Icon = s.icon;
 
   useEffect(() => {
     if (!cardRef.current) return;
@@ -222,9 +222,8 @@ function ServiceCard({ s, index }: { s: typeof SERVICES[0]; index: number }) {
           {s.highlights.slice(0, 3).map((h, i) => (
             <div
               key={h}
-              className={`flex items-center gap-2.5 px-3 py-2 text-[11px] border-b border-gray-50 dark:border-white/5 last:border-b-0 ${
-                i % 2 === 0 ? 'bg-gray-50/50 dark:bg-white/[0.02]' : 'bg-white dark:bg-transparent'
-              }`}
+              className={`flex items-center gap-2.5 px-3 py-2 text-[11px] border-b border-gray-50 dark:border-white/5 last:border-b-0 ${i % 2 === 0 ? 'bg-gray-50/50 dark:bg-white/[0.02]' : 'bg-white dark:bg-transparent'
+                }`}
             >
               <CheckCircle2 className="w-3 h-3 flex-shrink-0" style={{ color: s.accentColor }} />
               <span className="text-gray-600 dark:text-gray-400 font-medium">{h}</span>
@@ -313,23 +312,23 @@ export default function ServicesOverview() {
           </div>
 
           <h2 className="text-5xl md:text-6xl font-black text-gray-900 dark:text-white leading-[1] mb-4 tracking-tight">
-            Our{' '}
+            HVAC{' '}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-cyan-500 dark:from-sky-400 dark:to-cyan-400">
               Services
             </span>
           </h2>
           <p className="max-w-xl mx-auto text-base text-gray-500 dark:text-white/40 leading-relaxed mb-10">
-            From installation to round-the-clock support, every service is designed to keep you comfortable all year long.
+            Professional AC installation, repair, AMC, and 24/7 emergency support in Bangalore. Blue Star authorized service centre with {yearsExp}+ years of expertise.
           </p>
 
           {/* Stats */}
           <div className="inline-grid grid-cols-3 sm:grid-cols-5 gap-px rounded-2xl overflow-hidden border border-gray-200 dark:border-white/8 bg-gray-100 dark:bg-white/5 backdrop-blur-md mb-8">
             {[
               { val: `${yearsExp}+`, lbl: 'Years' },
-              { val: '45+',         lbl: 'Engineers' },
-              { val: '100+',        lbl: 'Clients' },
-              { val: '24/7',        lbl: 'Support' },
-              { val: '6',           lbl: 'Services' },
+              { val: '45+', lbl: 'Engineers' },
+              { val: '100+', lbl: 'Clients' },
+              { val: '24/7', lbl: 'Support' },
+              { val: '6', lbl: 'Services' },
             ].map((s) => (
               <div key={s.lbl} className="px-6 py-3 bg-white dark:bg-white/[0.04] text-center">
                 <p className="text-lg font-black text-gray-900 dark:text-white">{s.val}</p>
@@ -348,13 +347,13 @@ export default function ServicesOverview() {
             <SlidersHorizontal className="w-4 h-4 flex-shrink-0 text-gray-400" />
             {FILTERS.map((f) => (
               <button
+                type="button"
                 key={f.value}
                 onClick={() => setActiveFilter(f.value)}
-                className={`flex-shrink-0 rounded-full px-4 py-1.5 text-xs font-bold transition-all ${
-                  activeFilter === f.value
-                    ? 'bg-sky-500 text-white shadow-lg shadow-sky-500/30'
-                    : 'bg-gray-100 dark:bg-white/[0.06] text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-white/10'
-                }`}
+                className={`flex-shrink-0 rounded-full px-4 py-1.5 text-xs font-bold transition-all ${activeFilter === f.value
+                  ? 'bg-sky-500 text-white shadow-lg shadow-sky-500/30'
+                  : 'bg-gray-100 dark:bg-white/[0.06] text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-white/10'
+                  }`}
               >
                 {f.label}
               </button>
@@ -380,14 +379,14 @@ export default function ServicesOverview() {
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-center text-[10px] font-black uppercase tracking-widest text-sky-500 mb-2">Why Sneha Enterprises</p>
           <h3 className="text-center text-xl md:text-2xl font-black text-gray-900 dark:text-white mb-8">
-            Bangalore&apos;s Most Trusted BlueStar Partner
+            Bangalore&apos;s #1 Blue Star Authorized Dealer Since 1996
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { icon: ShieldCheck, title: 'Genuine Products',    desc: 'Authorised BlueStar dealer — 100% authentic products with full warranty.' },
-              { icon: Wrench,      title: 'Expert Installation', desc: `AMC-certified engineers with ${yearsExp}+ years of hands-on installation experience.` },
-              { icon: ArrowRight,  title: 'End-to-End Service',  desc: 'Site survey → design → supply → install → commissioning under one roof.' },
-              { icon: Headphones,  title: 'AMC Contracts',       desc: 'Annual maintenance contracts to keep your systems at peak efficiency.' },
+              { icon: ShieldCheck, title: 'Blue Star Authorized', desc: '100% genuine Blue Star products with manufacturer warranty and after-sales support in Bangalore.' },
+              { icon: Wrench, title: 'Expert Engineers', desc: `${yearsExp}+ years experience. 45+ certified HVAC engineers for installation, service & AMC across Bangalore.` },
+              { icon: ArrowRight, title: 'End-to-End HVAC', desc: 'Site survey → load calculation → design → supply → installation → commissioning — all under one roof.' },
+              { icon: Headphones, title: 'AMC & 24/7 Support', desc: 'Annual maintenance contracts with priority breakdown response. Emergency AC repair available 24/7.' },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="text-center">
                 <div className="w-10 h-10 rounded-2xl bg-sky-50 dark:bg-sky-500/10 flex items-center justify-center mx-auto mb-3">
@@ -407,13 +406,13 @@ export default function ServicesOverview() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-300 dark:via-sky-500/40 to-transparent" />
         <div className="relative z-10 max-w-2xl mx-auto px-6">
           <h3 className="text-2xl md:text-3xl font-black text-gray-900 dark:text-white mb-3 leading-tight">
-            Need a service or{' '}
+            Get a Free AC Quote in{' '}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-cyan-500 dark:from-sky-400 dark:to-cyan-400">
-              free consultation?
+              Bangalore
             </span>
           </h3>
           <p className="text-sm text-gray-500 dark:text-white/40 mb-8 leading-relaxed">
-            Our engineers will assess your space and recommend the most energy-efficient solution — free of charge.
+            Our HVAC engineers will visit your site, assess cooling requirements, and recommend the most energy-efficient Blue Star AC solution — completely free of charge, no obligations.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3">
             <Link

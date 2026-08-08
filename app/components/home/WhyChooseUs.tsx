@@ -17,9 +17,9 @@ const reasons = [
 
 export default function WhyChooseUs() {
   const sectionRef = useRef<HTMLElement>(null);
-  const leftRef    = useRef<HTMLDivElement>(null);
-  const rightRef   = useRef<HTMLDivElement>(null);
-  const imageRef   = useRef<HTMLDivElement>(null);
+  const leftRef = useRef<HTMLDivElement>(null);
+  const rightRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -54,12 +54,12 @@ export default function WhyChooseUs() {
             {/* Section heading — custom bold treatment */}
             <div className="flex flex-col gap-4 mb-10">
               <span className="inline-flex items-center gap-2 w-fit rounded-full bg-blue-100 dark:bg-blue-900/40 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-blue-700 dark:text-blue-400">
-                <span className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse" />
+                <span className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse" />{' '}
                 Why Sneha Enterprises
               </span>
 
               <h2 className="text-4xl md:text-5xl font-black leading-tight text-gray-900 dark:text-white">
-                The Trusted Choice
+                The Trusted Choice{' '}
                 <span className="block text-blue-600 dark:text-blue-400">for Blue Star AC</span>
               </h2>
 
@@ -90,7 +90,7 @@ export default function WhyChooseUs() {
                 </div>
                 {/* Stars */}
                 <div className="mt-4 flex gap-1 text-yellow-400">
-                  {[...Array(5)].map((_, i) => <span key={i}>★</span>)}
+                  {Array.from({ length: 5 }, (_, i) => <span key={`star-${i}`}>★</span>)}
                   <span className="text-blue-200 text-xs ml-1">5.0 · 500+ Reviews</span>
                 </div>
               </div>

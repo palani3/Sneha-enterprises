@@ -21,21 +21,21 @@ export interface BrochureImageData {
 
 /* ── Color System ──────────────────────────────────────────────── */
 const C = {
-  primary:    '#0ea5e9',
-  primaryDk:  '#0369a1',
-  dark:       '#0f172a',
-  slate:      '#334155',
-  gray:       '#64748b',
-  lightGray:  '#94a3b8',
-  white:      '#ffffff',
-  bg:         '#f8fafc',
-  bgBlue:     '#f0f9ff',
-  border:     '#e2e8f0',
-  green:      '#10b981',
-  amber:      '#f59e0b',
-  violet:     '#8b5cf6',
-  rose:       '#fb7185',
-  cyan:       '#22d3ee',
+  primary: '#0ea5e9',
+  primaryDk: '#0369a1',
+  dark: '#0f172a',
+  slate: '#334155',
+  gray: '#64748b',
+  lightGray: '#94a3b8',
+  white: '#ffffff',
+  bg: '#f8fafc',
+  bgBlue: '#f0f9ff',
+  border: '#e2e8f0',
+  green: '#10b981',
+  amber: '#f59e0b',
+  violet: '#8b5cf6',
+  rose: '#fb7185',
+  cyan: '#22d3ee',
 };
 
 /* ── Styles ────────────────────────────────────────────────────── */
@@ -333,7 +333,7 @@ const BrochurePDF = ({ images }: { images: BrochureImageData }) => {
             <>
               <Text style={s.secTitle}>Our Products</Text>
               <View style={s.secLine} />
-              <Text style={s.secSub}>Complete BlueStar air conditioning range — residential splits to industrial chillers</Text>
+              <Text style={s.secSub}>Complete Blue Star air conditioning range — residential splits to industrial chillers</Text>
             </>
           )}
 

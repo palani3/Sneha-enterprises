@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { PAGE_SEO, SITE } from '../lib/seo.config';
+import { PAGE_SEO, SITE, breadcrumbJsonLd } from '../lib/seo.config';
 
 const p = PAGE_SEO.products;
 
@@ -15,6 +15,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ProductsLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+const breadcrumb = breadcrumbJsonLd([
+  { name: 'Home', url: SITE.url },
+  { name: 'Products', url: `${SITE.url}/products` },
+]);
+
+export default function ProductsLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      {children}
+    </>
+  );
 }

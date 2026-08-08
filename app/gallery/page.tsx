@@ -21,124 +21,88 @@ interface GalleryItem {
 
 /* ─── Data — verified existing files only ─────────────────── */
 const items: GalleryItem[] = [
-  /* ── Google folder (41 real project photos) ── */
-  { id: 1,  src: '/img/gallry/google/1.jpeg',  label: 'Project Site',            cat: 'Projects', span: 'wide' },
-  { id: 2,  src: '/img/gallry/google/2.jpeg',  label: 'HVAC Installation',       cat: 'Projects'              },
-  { id: 3,  src: '/img/gallry/google/3.jpeg',  label: 'System Setup',            cat: 'Projects'              },
-  { id: 4,  src: '/img/gallry/google/4.jpeg',  label: 'Commercial Project',      cat: 'Projects', span: 'tall' },
-  { id: 5,  src: '/img/gallry/google/5.jpeg',  label: 'Unit Installation',       cat: 'Projects'              },
-  { id: 6,  src: '/img/gallry/google/6.jpeg',  label: 'Outdoor Units',           cat: 'Projects'              },
-  { id: 7,  src: '/img/gallry/google/7.jpeg',  label: 'Commissioning',           cat: 'Projects', span: 'wide' },
-  { id: 8,  src: '/img/gallry/google/8.jpeg',  label: 'Site Work',               cat: 'Projects'              },
-  { id: 9,  src: '/img/gallry/google/9.jpeg',  label: 'HVAC System',             cat: 'Projects'              },
-  { id: 10, src: '/img/gallry/google/10.jpeg', label: 'Project Execution',       cat: 'Projects', span: 'tall' },
-  { id: 11, src: '/img/gallry/google/11.jpeg', label: 'Installation Work',       cat: 'Projects'              },
-  { id: 12, src: '/img/gallry/google/12.jpeg', label: 'Equipment Setup',         cat: 'Projects'              },
-  { id: 13, src: '/img/gallry/google/13.jpeg', label: 'Commercial Setup',        cat: 'Projects', span: 'wide' },
-  { id: 14, src: '/img/gallry/google/14.jpeg', label: 'HVAC Fit-out',            cat: 'Projects'              },
-  { id: 15, src: '/img/gallry/google/15.jpeg', label: 'System Commissioning',    cat: 'Projects'              },
-  { id: 16, src: '/img/gallry/google/16.jpeg', label: 'Duct Installation',       cat: 'Projects'              },
-  { id: 17, src: '/img/gallry/google/17.jpeg', label: 'Refrigerant Lines',       cat: 'Projects', span: 'tall' },
-  { id: 18, src: '/img/gallry/google/18.jpeg', label: 'Panel Setup',             cat: 'Projects'              },
-  { id: 19, src: '/img/gallry/google/19.jpeg', label: 'Outdoor Array',           cat: 'Projects'              },
-  { id: 20, src: '/img/gallry/google/20.jpeg', label: 'Site Completion',         cat: 'Projects', span: 'wide' },
-  { id: 21, src: '/img/gallry/google/21.jpeg', label: 'VRF',            cat: 'Projects'              },
-  { id: 22, src: '/img/gallry/google/22.jpeg', label: 'Installation Detail',     cat: 'Projects'              },
-  { id: 23, src: '/img/gallry/google/23.jpeg', label: 'AHU',      cat: 'Installations'              },
-  { id: 24, src: '/img/gallry/google/24.jpeg', label: 'Kitchen Scrubber',      cat: 'Installations', span: 'tall' },
-  { id: 25, src: '/img/gallry/google/25.jpeg', label: 'AHU',        cat: 'Installations'              },
-  { id: 26, src: '/img/gallry/google/26.jpeg', label: 'AC Unit Array',           cat: 'Projects'              },
-  { id: 27, src: '/img/gallry/google/27.jpeg', label: 'Training and hand over',    cat: 'Installations', span: 'wide' },
-  { id: 28, src: '/img/gallry/google/28.jpeg', label: 'Ventilation Work',        cat: 'Projects'              },
-  { id: 29, src: '/img/gallry/google/29.jpeg', label: 'Packaged Unit',           cat: 'Projects'              },
-  { id: 30, src: '/img/gallry/google/30.jpeg', label: 'Training and hand over',          cat: 'Installations'              },
-  { id: 31, src: '/img/gallry/google/31.jpeg', label: 'HVAC Commissioning',      cat: 'Projects', span: 'tall' },
-  { id: 32, src: '/img/gallry/google/32.jpeg', label: 'Training and hand over',         cat: 'Installations'              },
-  { id: 33, src: '/img/gallry/google/33.jpeg', label: 'Training and hand over',          cat: 'Installations'              },
-  { id: 34, src: '/img/gallry/google/34.jpeg', label: 'Installation Complete',   cat: 'Projects', span: 'wide' },
-  { id: 35, src: '/img/gallry/google/35.jpeg', label: 'Kitchen Exhaust unit',          cat: 'Projects'              },
-  { id: 36, src: '/img/gallry/google/36.jpeg', label: 'Commercial Build',        cat: 'Projects'              },
-  { id: 37, src: '/img/gallry/google/37.jpeg', label: 'HVAC Detail',             cat: 'Projects'              },
-  { id: 38, src: '/img/gallry/google/38.jpeg', label: 'Air balancing',        cat: 'Installations', span: 'tall' },
-  { id: 39, src: '/img/gallry/google/39.jpeg', label: 'Training and hand over',             cat: 'Installations'              },
-  { id: 40, src: '/img/gallry/google/40.jpeg', label: 'Training and hand over',         cat: 'Installations'              },
-  { id: 41, src: '/img/gallry/google/41.jpeg', label: 'Project Delivery',        cat: 'Projects', span: 'wide' },
+  /* ── Google folder ── */
+  { id: 19, src: '/img/gallry/google/19.jpeg', label: 'Outdoor Array', cat: 'Projects' },
+  { id: 20, src: '/img/gallry/google/20.jpeg', label: 'Site Completion', cat: 'Projects', span: 'wide' },
+  { id: 21, src: '/img/gallry/google/21.jpeg', label: 'VRF', cat: 'Projects' },
+  { id: 22, src: '/img/gallry/google/22.jpeg', label: 'Installation Detail', cat: 'Projects' },
+  { id: 23, src: '/img/gallry/google/23.jpeg', label: 'AHU', cat: 'Installations' },
+  { id: 24, src: '/img/gallry/google/24.jpeg', label: 'Kitchen Scrubber', cat: 'Installations', span: 'tall' },
+  { id: 25, src: '/img/gallry/google/25.jpeg', label: 'AHU', cat: 'Installations' },
+  { id: 26, src: '/img/gallry/google/26.jpeg', label: 'AC Unit Array', cat: 'Projects' },
+  { id: 27, src: '/img/gallry/google/27.jpeg', label: 'Training and hand over', cat: 'Installations', span: 'wide' },
+  { id: 29, src: '/img/gallry/google/29.jpeg', label: 'Packaged Unit', cat: 'Projects' },
+  { id: 30, src: '/img/gallry/google/30.jpeg', label: 'Training and hand over', cat: 'Installations' },
+  { id: 32, src: '/img/gallry/google/32.jpeg', label: 'Training and hand over', cat: 'Installations' },
+  { id: 33, src: '/img/gallry/google/33.jpeg', label: 'Training and hand over', cat: 'Installations' },
+  { id: 34, src: '/img/gallry/google/34.jpeg', label: 'Installation Complete', cat: 'Projects', span: 'wide' },
+  { id: 35, src: '/img/gallry/google/35.jpeg', label: 'Kitchen Exhaust unit', cat: 'Projects' },
+  { id: 37, src: '/img/gallry/google/37.jpeg', label: 'HVAC Detail', cat: 'Projects' },
+  { id: 38, src: '/img/gallry/google/38.jpeg', label: 'Air balancing', cat: 'Installations', span: 'tall' },
+  { id: 39, src: '/img/gallry/google/39.jpeg', label: 'Training and hand over', cat: 'Installations' },
+  { id: 40, src: '/img/gallry/google/40.jpeg', label: 'Training and hand over', cat: 'Installations' },
 
   /* ── VRF Systems ── */
-  { id: 42, src: '/img/gallry/vrf1.jpg',       label: 'VRF', cat: 'VRF Systems', span: 'wide' },
-  { id: 43, src: '/img/gallry/vrf2.jpg',       label: 'VRF',       cat: 'VRF Systems'               },
-  { id: 44, src: '/img/gallry/vrf3.jpg',       label: 'VRF',       cat: 'VRF Systems'               },
-  { id: 45, src: '/img/gallry/vrfinfinity.png', label: 'VRF Infinity Series',    cat: 'VRF Systems', span: 'tall' },
+  { id: 42, src: '/img/gallry/vrf1.jpg', label: 'VRF', cat: 'VRF Systems', span: 'wide' },
+  { id: 43, src: '/img/gallry/vrf2.jpg', label: 'VRF', cat: 'VRF Systems' },
+  { id: 44, src: '/img/gallry/vrf3.jpg', label: 'VRF', cat: 'VRF Systems' },
+  { id: 45, src: '/img/gallry/vrfinfinity.png', label: 'VRF Infinity Series', cat: 'VRF Systems', span: 'tall' },
 
-  /* ── Installations (photo/d — 3 verified files) ── */
-  { id: 46, src: '/img/gallry/photo/d/IMG_20210918_124636.jpg', label: 'Site Installation',   cat: 'Installations', span: 'wide' },
-  { id: 47, src: '/img/gallry/photo/d/IMG_20210918_124903.jpg', label: 'Duct work ',      cat: 'Projects'               },
-  { id: 48, src: '/img/gallry/photo/d/IMG_20210918_125702.jpg', label: 'Duct work',  cat: 'Installations'               },
+  /* ── Installations (photo/d) ── */
+  { id: 47, src: '/img/gallry/photo/d/IMG_20210918_124903.jpg', label: 'Duct work', cat: 'Projects' },
+  { id: 48, src: '/img/gallry/photo/d/IMG_20210918_125702.jpg', label: 'Duct work', cat: 'Installations' },
 
-  /* ── Commercial (photo/f — 8 verified files) ── */
-  { id: 49, src: '/img/gallry/photo/f/IMG_20210918_131309.jpg', label: 'Commercial Fit-out',  cat: 'Commercial', span: 'wide' },
-  { id: 50, src: '/img/gallry/photo/f/IMG_20210918_131512.jpg', label: ' Duct work',        cat: 'Installations'              },
-  { id: 51, src: '/img/gallry/photo/f/IMG_20210918_131525.jpg', label: ' Duct work',  cat: 'Installations'              },
-  { id: 52, src: '/img/gallry/photo/f/IMG_20210918_132121.jpg', label: 'Ceiling Installation',cat: 'Commercial', span: 'tall' },
-  { id: 53, src: '/img/gallry/photo/f/IMG_20210918_141340.jpg', label: ' Duct work',        cat: 'Installations', span: 'wide' },
-  { id: 54, src: '/img/gallry/photo/f/IMG_20210918_141756.jpg', label: ' Duct work',        cat: 'Installations'              },
-  { id: 55, src: '/img/gallry/photo/f/IMG_20210918_141805.jpg', label: 'Final Commissioning', cat: 'Commercial'              },
-  { id: 56, src: '/img/gallry/photo/f/IMG_20210918_143215.jpg', label: 'Four Way Cassette',  cat: 'Installations'              },
+  /* ── Commercial (photo/f) ── */
+  { id: 50, src: '/img/gallry/photo/f/IMG_20210918_131512.jpg', label: 'Duct work', cat: 'Installations' },
+  { id: 51, src: '/img/gallry/photo/f/IMG_20210918_131525.jpg', label: 'Duct work', cat: 'Installations' },
+  { id: 52, src: '/img/gallry/photo/f/IMG_20210918_132121.jpg', label: 'Ceiling Installation', cat: 'Commercial', span: 'tall' },
+  { id: 53, src: '/img/gallry/photo/f/IMG_20210918_141340.jpg', label: 'Duct work', cat: 'Installations', span: 'wide' },
+  { id: 55, src: '/img/gallry/photo/f/IMG_20210918_141805.jpg', label: 'Final Commissioning', cat: 'Commercial' },
+  { id: 56, src: '/img/gallry/photo/f/IMG_20210918_143215.jpg', label: 'Four Way Cassette', cat: 'Installations' },
 
   /* ── Root gallery images ── */
-  { id: 57, src: '/img/gallry/1.png',  label: 'Commercial HVAC Setup',   cat: 'Commercial', span: 'wide' },
-  { id: 58, src: '/img/gallry/2.png',  label: 'Office Air Conditioning', cat: 'Commercial'              },
-  { id: 59, src: '/img/gallry/3.png',  label: 'Chilled Water System',    cat: 'Commercial', span: 'tall' },
-  { id: 60, src: '/img/gallry/6.png',  label: 'Ducted AC Installation',  cat: 'Installations'            },
-  { id: 61, src: '/img/gallry/7.jpg',  label: 'Cassette AC Fitment',     cat: 'Installations', span: 'wide' },
-  { id: 62, src: '/img/gallry/7.png',  label: 'Split AC Wall Mount',     cat: 'Installations'            },
+  { id: 57, src: '/img/gallry/1.png', label: 'Commercial HVAC Setup', cat: 'Commercial', span: 'wide' },
+  { id: 58, src: '/img/gallry/2.png', label: 'Office Air Conditioning', cat: 'Commercial' },
+  { id: 60, src: '/img/gallry/6.png', label: 'Ducted AC Installation', cat: 'Installations' },
+  { id: 61, src: '/img/gallry/7.jpg', label: 'Cassette AC Fitment', cat: 'Installations', span: 'wide' },
+  { id: 62, src: '/img/gallry/7.png', label: 'Split AC Wall Mount', cat: 'Installations' },
 
   /* ── New Project Photos ── */
-  { id: 63,  src: '/img/gallry/newpic/10.webp', label: 'Project Site',             cat: 'Projects',      span: 'wide' },
-  { id: 64,  src: '/img/gallry/newpic/11.webp', label: 'HVAC Installation',        cat: 'Projects'                    },
-  { id: 65,  src: '/img/gallry/newpic/12.webp', label: 'System Setup',             cat: 'Projects'                    },
-  { id: 66,  src: '/img/gallry/newpic/13.webp', label: 'Commercial Project',       cat: 'Commercial',    span: 'tall' },
-  { id: 67,  src: '/img/gallry/newpic/14.webp', label: 'Unit Installation',        cat: 'Installations'               },
-  { id: 68,  src: '/img/gallry/newpic/15.webp', label: 'Outdoor Units',            cat: 'Projects'                    },
-  { id: 69,  src: '/img/gallry/newpic/16.webp', label: 'Commissioning Work',       cat: 'Projects',      span: 'wide' },
-  { id: 70,  src: '/img/gallry/newpic/17.webp', label: 'Site Work',                cat: 'Installations'               },
-  { id: 71,  src: '/img/gallry/newpic/18.webp', label: 'HVAC System',              cat: 'Projects'                    },
-  { id: 72,  src: '/img/gallry/newpic/19.webp', label: 'Ducting',        cat: 'Projects',    span: 'tall' },
-  { id: 73,  src: '/img/gallry/newpic/20.webp', label: 'Installation Work',        cat: 'Installations',  span: 'wide' },
-  { id: 74,  src: '/img/gallry/newpic/21.jpeg', label: 'Fire Dampers',          cat: 'Installations'                    },
-  { id: 75,  src: '/img/gallry/newpic/22.jpeg', label: 'Commercial Setup',         cat: 'Commercial'                  },
-  { id: 76,  src: '/img/gallry/newpic/23.jpeg', label: 'HVAC Fit-out',             cat: 'Commercial',    span: 'wide' },
-  { id: 77,  src: '/img/gallry/newpic/24.jpeg', label: 'System Commissioning',     cat: 'Projects'                    },
-  { id: 78,  src: '/img/gallry/newpic/25.jpeg', label: 'Fire Damper',        cat: 'Installations'               },
-  { id: 79,  src: '/img/gallry/newpic/26.jpeg', label: 'Fire  Damper',        cat: 'Installations',      span: 'tall' },
-  { id: 80,  src: '/img/gallry/newpic/27.jpeg', label: 'AHU',              cat: 'Installations'                  },
-  { id: 81,  src: '/img/gallry/newpic/28.jpeg', label: 'Outdoor Array',            cat: 'Projects'                    },
-  { id: 82,  src: '/img/gallry/newpic/29.jpeg', label: 'Site Completion',          cat: 'Installations',  span: 'wide' },
-  { id: 83,  src: '/img/gallry/newpic/30.jpeg', label: 'HVAC Project',             cat: 'Projects'                    },
-  { id: 84,  src: '/img/gallry/newpic/31.jpeg', label: 'Installation Detail',      cat: 'Installations'               },
-  { id: 85,  src: '/img/gallry/newpic/32.jpeg', label: 'System Integration',       cat: 'Commercial',    span: 'tall' },
-  { id: 86,  src: '/img/gallry/newpic/33.jpeg', label: 'Commercial Cooling',       cat: 'Commercial'                  },
-  { id: 87,  src: '/img/gallry/newpic/34.jpeg', label: 'Project Handover',         cat: 'Projects',      span: 'wide' },
-  { id: 88,  src: '/img/gallry/newpic/35.jpeg', label: 'AC Unit Array',            cat: 'Projects'                    },
-  { id: 89,  src: '/img/gallry/newpic/36.jpeg', label: 'Chiller Installation',     cat: 'Projects'                    },
-  { id: 90,  src: '/img/gallry/newpic/37.jpeg', label: 'Ventilation Work',         cat: 'Installations'               },
-  { id: 91,  src: '/img/gallry/newpic/38.jpeg', label: 'VRF',            cat: 'Commercial',    span: 'wide' },
-  { id: 92,  src: '/img/gallry/newpic/39.jpeg', label: 'VRF Outdoor Setup',        cat: 'VRF Systems',   span: 'tall' },
-  { id: 93,  src: '/img/gallry/newpic/40.jpeg', label: 'VRF System Detail',        cat: 'VRF Systems'                 },
-  { id: 94,  src: '/img/gallry/newpic/41.jpeg', label: 'VRF Installation',         cat: 'VRF Systems'                 },
-  { id: 95,  src: '/img/gallry/newpic/42.jpeg', label: 'Site Execution',           cat: 'Projects',      span: 'wide' },
-  { id: 96,  src: '/img/gallry/newpic/43.jpeg', label: 'HVAC Commissioning',       cat: 'Projects'                    },
-  { id: 97,  src: '/img/gallry/newpic/44.jpeg', label: 'Ductwork Detail',          cat: 'Installations'               },
-  { id: 98,  src: '/img/gallry/newpic/45.jpeg', label: 'Round diffuser',           cat: 'Installations',    span: 'tall' },
-  { id: 99,  src: '/img/gallry/newpic/46.jpeg', label: 'Installation Complete',    cat: 'Installations'               },
-  { id: 100, src: '/img/gallry/newpic/47.jpeg', label: 'System Testing',           cat: 'Projects',      span: 'wide' },
-  { id: 101, src: '/img/gallry/newpic/48.jpeg', label: 'Commercial Build',         cat: 'Commercial'                  },
-  { id: 102, src: '/img/gallry/newpic/49.jpeg', label: 'HVAC Detail',              cat: 'Projects'                    },
-  { id: 103, src: '/img/gallry/newpic/50.jpeg', label: 'Round diffuser',         cat: 'Installations',  span: 'wide' },
-  { id: 104, src: '/img/gallry/newpic/51.jpeg', label: 'Final Setup',              cat: 'Projects'                    },
-  { id: 105, src: '/img/gallry/newpic/52.jpeg', label: 'System Handover',          cat: 'Commercial',    span: 'tall' },
-  { id: 106, src: '/img/gallry/newpic/53.jpeg', label: 'Project Delivery',         cat: 'Projects'                    },
-  { id: 107, src: '/img/gallry/newpic/54.jpeg', label: 'Completed Installation',   cat: 'Projects',      span: 'wide' },
+  { id: 68, src: '/img/gallry/newpic/15.webp', label: 'Outdoor Units', cat: 'Projects' },
+  { id: 72, src: '/img/gallry/newpic/19.webp', label: 'Ducting', cat: 'Projects', span: 'tall' },
+  { id: 75, src: '/img/gallry/newpic/22.jpeg', label: 'Commercial Setup', cat: 'Commercial' },
+  { id: 84, src: '/img/gallry/newpic/31.jpeg', label: 'Installation Detail', cat: 'Installations' },
+  { id: 86, src: '/img/gallry/newpic/33.jpeg', label: 'Commercial Cooling', cat: 'Commercial' },
+  { id: 87, src: '/img/gallry/newpic/34.jpeg', label: 'Project Handover', cat: 'Projects', span: 'wide' },
+  { id: 98, src: '/img/gallry/newpic/45.jpeg', label: 'Round diffuser', cat: 'Installations', span: 'tall' },
+  { id: 102, src: '/img/gallry/newpic/49.jpeg', label: 'HVAC Detail', cat: 'Projects' },
+  { id: 103, src: '/img/gallry/newpic/50.jpeg', label: 'Round diffuser', cat: 'Installations', span: 'wide' },
+  { id: 104, src: '/img/gallry/newpic/51.jpeg', label: 'Final Setup', cat: 'Projects' },
+  { id: 105, src: '/img/gallry/newpic/52.jpeg', label: 'System Handover', cat: 'Commercial', span: 'tall' },
+
+  /* ── New additions ── */
+  { id: 106, src: '/img/gallry/new3.png', label: 'Cassette AC with Ducting', cat: 'Installations', span: 'wide' },
+  { id: 107, src: '/img/gallry/Picture1.jpg', label: 'Ducting', cat: 'Installations' },
+  { id: 108, src: '/img/gallry/Picture2.jpg', label: 'Commercial Ducting', cat: 'Commercial', span: 'wide' },
+  { id: 109, src: '/img/gallry/Picture3.jpg', label: 'Ducting ', cat: 'Installations' },
+  { id: 110, src: '/img/gallry/Picture4.jpg', label: 'Ducting ', cat: 'Installations', span: 'tall' },
+  { id: 111, src: '/img/gallry/Picture5.jpg', label: 'Diffuser', cat: 'Commercial' },
+  { id: 112, src: '/img/gallry/Picture6.jpg', label: 'Commercial Diffuser', cat: 'Commercial', span: 'wide' },
+  { id: 113, src: '/img/gallry/Picture7.jpg', label: 'Open Floor Ducting', cat: 'Commercial' },
+  { id: 114, src: '/img/gallry/Picture8.jpg', label: 'Diffuser', cat: 'Installations' },
+  { id: 115, src: '/img/gallry/Picture9.jpg', label: 'Ducting', cat: 'Installations', span: 'wide' },
+  { id: 116, src: '/img/gallry/Picture10.jpg', label: 'Cassette AC Ceiling', cat: 'Installations', span: 'tall' },
+  { id: 117, src: '/img/gallry/Picture11.jpg', label: 'Cassette AC Ceiling', cat: 'Installations' },
+  { id: 118, src: '/img/gallry/Picture12.jpg', label: 'Condenser', cat: 'Projects', span: 'wide' },
+  { id: 119, src: '/img/gallry/Picture13.jpg', label: 'VRF OutdoorUnit', cat: 'Projects' },
+  { id: 120, src: '/img/gallry/Picture14.jpg', label: 'VRF OutdoorUnit', cat: 'Projects' },
+  { id: 121, src: '/img/gallry/Picture15.jpg', label: 'VRF OutdoorUnit', cat: 'VRF Systems', span: 'wide' },
+  { id: 122, src: '/img/gallry/Picture16.jpg', label: 'VRF OutdoorUnit', cat: 'VRF Systems', span: 'tall' },
+  { id: 123, src: '/img/gallry/Picture17.jpg', label: 'VRF Units Rooftop', cat: 'VRF Systems' },
+  { id: 124, src: '/img/gallry/Picture18.jpg', label: 'VRF OutdoorUnit', cat: 'VRF Systems', span: 'wide' },
+  { id: 125, src: '/img/gallry/Picture20.jpg', label: 'Ducting', cat: 'Commercial', span: 'wide' },
+  { id: 126, src: '/img/gallry/Picture21.jpg', label: 'Ducting', cat: 'Commercial' },
+  { id: 127, src: '/img/gallry/Picture22.jpg', label: 'Rooftop AHU Installation', cat: 'Projects', span: 'tall' },
 ];
 
 const CATS: Category[] = ['All', 'Projects', 'VRF Systems', 'Installations', 'Commercial'];
@@ -146,18 +110,16 @@ const CATS: Category[] = ['All', 'Projects', 'VRF Systems', 'Installations', 'Co
 const PAGE_SIZE = 24;
 
 /* ─── GalleryCard ─────────────────────────────────────────── */
-function GalleryCard({ item, index, onClick }: {
+function GalleryCard({ item, index, onClick }: Readonly<{
   item: GalleryItem;
   index: number;
   onClick: (item: GalleryItem, index: number) => void;
-}) {
+}>) {
   return (
-    <div
-      role="button"
-      tabIndex={0}
+    <button
+      type="button"
       onClick={() => onClick(item, index)}
-      onKeyDown={(e) => e.key === 'Enter' && onClick(item, index)}
-      className={`gallery-card group relative overflow-hidden rounded-xl cursor-pointer bg-slate-100 dark:bg-slate-800
+      className={`gallery-card group relative overflow-hidden rounded-xl cursor-pointer bg-slate-100 dark:bg-slate-800 text-left
         ${item.span === 'wide' ? 'col-span-2' : ''}
         ${item.span === 'tall' ? 'row-span-2' : ''}
       `}
@@ -189,23 +151,28 @@ function GalleryCard({ item, index, onClick }: {
         <p className="text-[9px] font-black uppercase tracking-widest text-white/55 mb-0.5">{item.cat}</p>
         <p className="text-sm font-bold text-white leading-tight">{item.label}</p>
       </div>
-    </div>
+    </button>
   );
 }
 
 /* ─── Page ─────────────────────────────────────────────────── */
 export default function GalleryPage() {
-  const heroRef    = useRef<HTMLDivElement>(null);
-  const heroBgRef  = useRef<HTMLDivElement>(null);
-  const gridRef    = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const heroBgRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   const [activeFilter, setActiveFilter] = useState<Category>('All');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
-  const [lightbox, setLightbox]         = useState<{ filteredList: GalleryItem[]; index: number } | null>(null);
+  const [lightbox, setLightbox] = useState<{ filteredList: GalleryItem[]; index: number } | null>(null);
 
-  const filtered  = activeFilter === 'All' ? items : items.filter(i => i.cat === activeFilter);
-  const visible   = filtered.slice(0, visibleCount);
-  const hasMore   = visibleCount < filtered.length;
+  const handleFilterChange = (cat: Category) => {
+    setActiveFilter(cat);
+    setVisibleCount(PAGE_SIZE);
+  };
+
+  const filtered = activeFilter === 'All' ? items : items.filter(i => i.cat === activeFilter);
+  const visible = filtered.slice(0, visibleCount);
+  const hasMore = visibleCount < filtered.length;
 
   /* ── Hero parallax ── */
   useEffect(() => {
@@ -223,7 +190,6 @@ export default function GalleryPage() {
 
   /* ── Re-animate on filter change ── */
   useEffect(() => {
-    setVisibleCount(PAGE_SIZE);
     const cards = gridRef.current?.querySelectorAll<HTMLElement>('.gallery-card');
     if (!cards?.length) return;
     gsap.set(cards, { opacity: 1, y: 0 });
@@ -244,9 +210,9 @@ export default function GalleryPage() {
   }, [visibleCount]);
 
   /* ── Lightbox helpers ── */
-  const openLightbox = useCallback((item: GalleryItem, index: number) => {
+  const openLightbox = (item: GalleryItem, index: number) => {
     setLightbox({ filteredList: filtered, index });
-  }, [filtered]);
+  };
 
   const closeLightbox = useCallback(() => setLightbox(null), []);
 
@@ -266,8 +232,8 @@ export default function GalleryPage() {
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape')     closeLightbox();
-      if (e.key === 'ArrowLeft')  prevImage();
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevImage();
       if (e.key === 'ArrowRight') nextImage();
     };
     window.addEventListener('keydown', handler);
@@ -316,18 +282,17 @@ export default function GalleryPage() {
             const count = cat === 'All' ? items.length : items.filter(i => i.cat === cat).length;
             return (
               <button
+                type="button"
                 key={cat}
-                onClick={() => setActiveFilter(cat)}
-                className={`flex-shrink-0 rounded-full px-4 py-1.5 text-xs font-bold transition-all duration-200 ${
-                  activeFilter === cat
-                    ? 'bg-sky-500 text-white shadow-md shadow-sky-500/20'
-                    : 'border border-slate-200 bg-white text-slate-500 hover:border-sky-300 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400 dark:hover:border-sky-700 dark:hover:text-sky-400'
-                }`}
+                onClick={() => handleFilterChange(cat)}
+                className={`flex-shrink-0 rounded-full px-4 py-1.5 text-xs font-bold transition-all duration-200 ${activeFilter === cat
+                  ? 'bg-sky-500 text-white shadow-md shadow-sky-500/20'
+                  : 'border border-slate-200 bg-white text-slate-500 hover:border-sky-300 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400 dark:hover:border-sky-700 dark:hover:text-sky-400'
+                  }`}
               >
                 {cat}
-                <span className={`ml-1.5 rounded-full px-1.5 py-0.5 text-[9px] font-black ${
-                  activeFilter === cat ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-400 dark:bg-slate-800 dark:text-slate-500'
-                }`}>
+                <span className={`ml-1.5 rounded-full px-1.5 py-0.5 text-[9px] font-black ${activeFilter === cat ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-400 dark:bg-slate-800 dark:text-slate-500'
+                  }`}>
                   {count}
                 </span>
               </button>
@@ -354,11 +319,12 @@ export default function GalleryPage() {
         {hasMore && (
           <div className="mt-10 flex justify-center">
             <button
+              type="button"
               onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
               className="rounded-xl border border-slate-200 bg-white px-8 py-3 text-sm font-bold text-slate-600 shadow-sm transition-all duration-200 hover:border-sky-300 hover:text-sky-600 hover:shadow-md dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400 dark:hover:border-sky-700 dark:hover:text-sky-400"
             >
               Load More
-              <span className="ml-2 rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-black text-slate-400 dark:bg-slate-800 dark:text-slate-500">
+              {' '}<span className="ml-2 rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-black text-slate-400 dark:bg-slate-800 dark:text-slate-500">
                 {filtered.length - visibleCount} remaining
               </span>
             </button>
@@ -368,12 +334,17 @@ export default function GalleryPage() {
 
       {/* ── LIGHTBOX ──────────────────────────────────────────── */}
       {lightbox && lbItem && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/92 backdrop-blur-sm"
+
+
+        <dialog
+          open
+          aria-label="Image lightbox"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/92 backdrop-blur-sm m-0 p-0 w-full h-full max-w-none max-h-none border-none"
           onClick={closeLightbox}
         >
           {/* Close */}
           <button
+            type="button"
             onClick={closeLightbox}
             className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition-colors hover:bg-white/20"
           >
@@ -382,6 +353,7 @@ export default function GalleryPage() {
 
           {/* Prev */}
           <button
+            type="button"
             onClick={(e) => { e.stopPropagation(); prevImage(); }}
             className="absolute left-3 top-1/2 z-20 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition-all hover:bg-white/20 md:left-6"
           >
@@ -390,6 +362,7 @@ export default function GalleryPage() {
 
           {/* Next */}
           <button
+            type="button"
             onClick={(e) => { e.stopPropagation(); nextImage(); }}
             className="absolute right-3 top-1/2 z-20 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition-all hover:bg-white/20 md:right-6"
           >
@@ -397,6 +370,7 @@ export default function GalleryPage() {
           </button>
 
           {/* Image container */}
+          { }
           <div
             className="relative mx-16 flex max-h-[88svh] max-w-5xl w-full flex-col overflow-hidden rounded-2xl"
             onClick={(e) => e.stopPropagation()}
@@ -424,7 +398,7 @@ export default function GalleryPage() {
               </span>
             </div>
           </div>
-        </div>
+        </dialog>
       )}
     </div>
   );

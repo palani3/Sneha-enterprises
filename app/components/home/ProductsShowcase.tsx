@@ -13,8 +13,23 @@ gsap.registerPlugin(ScrollTrigger);
 /* ─── Product Data ─────────────────────────────────────────── */
 const products = [
   {
-    id: 'package',
+    id: 'vrf',
     num: '01',
+    badge: 'Enterprise',
+    image: '/img/products/VRF/VRF.webp',
+    accent: '#4f46e5',
+    title: 'VRF Air Conditioner',
+    tagline: 'Multi-Zone · High Efficiency',
+    features: [
+      'Up to 64 Indoor Units',
+      'Simultaneous Heat & Cool',
+      'BMS / Modbus Integration',
+      'Variable Refrigerant Flow',
+    ],
+  },
+  {
+    id: 'package',
+    num: '02',
     badge: 'Central System',
     image: '/img/products/Package_Ductable%20AC/0.webp',
     accent: '#047857',
@@ -30,7 +45,7 @@ const products = [
 
   {
     id: 'split',
-    num: '02',
+    num: '03',
     badge: 'Most Popular',
     image: '/img/products/SplitAir/split.webp',
     accent: '#0284c7',
@@ -40,12 +55,27 @@ const products = [
       'Smart Inverter Compressor',
       'Wi-Fi Smart Control',
       'Self-Cleaning Function',
-      '5-Star BEE Energy Rating',
+      'BEE Energy Efficient',
+    ],
+  },
+  {
+    id: 'cassette',
+    num: '04',
+    badge: 'Commercial',
+    image: '/img/products/Cassette/CassetteAirConditioner.webp',
+    accent: '#7c3aed',
+    title: 'Cassette Air Conditioner',
+    tagline: 'Ceiling-Concealed · 360° Cooling',
+    features: [
+      '360° 4-Way Airflow',
+      'Inverter Technology',
+      'Ultra Slim Ceiling Design',
+      'Wi-Fi Smart Control',
     ],
   },
   {
     id: 'chiller',
-    num: '03',
+    num: '05',
     badge: 'Industrial',
     image: '/img/products/Chiller/Chiller1.webp',
     accent: '#0891b2',
@@ -59,23 +89,8 @@ const products = [
     ],
   },
   {
-    id: 'vrf',
-    num: '04',
-    badge: 'Enterprise',
-    image: '/img/products/VRF/VRF.webp',
-    accent: '#4f46e5',
-    title: 'VRF Air Conditioner',
-    tagline: 'Multi-Zone · High Efficiency',
-    features: [
-      'Up to 64 Indoor Units',
-      'Simultaneous Heat & Cool',
-      'BMS / Modbus Integration',
-      'Variable Refrigerant Flow',
-    ],
-  },
-  {
     id: 'screw',
-    num: '05',
+    num: '06',
     badge: 'Heavy Duty',
     image: '/img/products/Screw-Turbo%20Chillers/Screw.webp',
     accent: '#be123c',
@@ -86,21 +101,6 @@ const products = [
       '25+ Year Service Life',
       'Zero Oil Lubrication',
       'IoT Remote Monitoring',
-    ],
-  },
-  {
-    id: 'cassette',
-    num: '06',
-    badge: 'Commercial',
-    image: '/img/products/Cassette/CassetteAirConditioner.webp',
-    accent: '#7c3aed',
-    title: 'Cassette Air Conditioner',
-    tagline: 'Ceiling-Concealed · 360° Cooling',
-    features: [
-      '360° 4-Way Airflow',
-      'Inverter Technology',
-      'Ultra Slim Ceiling Design',
-      'Wi-Fi Smart Control',
     ],
   }
 

@@ -2,20 +2,20 @@
 
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { slides, INTERVAL } from './hero/heroSlides';
-import HeroSlider  from './hero/HeroSlider';
+import HeroSlider from './hero/HeroSlider';
 import HeroContent from './hero/HeroContent';
 
 export default function HeroSection() {
-  const [active, setActive]   = useState(0);
-  const [prevActive, setPrev] = useState<number | null>(null);
-  const heroRef   = useRef<HTMLElement>(null);
+  const [active, setActive] = useState(0);
+  const [prevActive, setPrevActive] = useState<number | null>(null);
+  const heroRef = useRef<HTMLElement>(null);
   const bgWrapRef = useRef<HTMLDivElement>(null);
-  const badgeRef  = useRef<HTMLDivElement>(null);
-  const timerRef  = useRef<ReturnType<typeof setInterval> | null>(null);
+  const badgeRef = useRef<HTMLDivElement>(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const advance = useCallback((direction = 1) => {
     setActive((prev) => {
-      setPrev(prev);
+      setPrevActive(prev);
       return (prev + direction + slides.length) % slides.length;
     });
   }, []);
@@ -27,7 +27,7 @@ export default function HeroSection() {
 
   const goTo = (i: number) => {
     if (timerRef.current) clearInterval(timerRef.current);
-    setPrev(active);
+    setPrevActive(active);
     setActive(i);
     timerRef.current = setInterval(() => advance(1), INTERVAL);
   };

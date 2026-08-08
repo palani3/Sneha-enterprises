@@ -1,8 +1,13 @@
 User-agent: *
 Allow: /
+Allow: /about
+Allow: /services
+Allow: /products
+Allow: /clients
+Allow: /gallery
+Allow: /contact
 
-# Disallow admin or private paths if added in future
-# Disallow: /admin/
-# Disallow: /api/
+Disallow: /_next/static/
+Disallow: /api/
 
 Sitemap: https://www.sneha-enterprises.com/sitemap.xml

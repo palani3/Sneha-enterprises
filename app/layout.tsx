@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
   keywords: SITE_KEYWORDS,
 
+  authors: [{ name: SITE.name, url: SITE.url }],
+  creator: SITE.name,
+  publisher: SITE.name,
+
   openGraph: {
     type: 'website',
     locale: SITE.locale,
@@ -35,7 +39,7 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 },
   },
 
   alternates: { canonical: SITE.url },
@@ -44,6 +48,13 @@ export const metadata: Metadata = {
     icon: '/favicon.png',
     apple: '/favicon.png',
     shortcut: '/favicon.png',
+  },
+
+  other: {
+    'geo.region': 'IN-KA',
+    'geo.placename': SITE.geo.placeName,
+    'geo.position': `${SITE.geo.latitude};${SITE.geo.longitude}`,
+    'ICBM': `${SITE.geo.latitude}, ${SITE.geo.longitude}`,
   },
 };
 

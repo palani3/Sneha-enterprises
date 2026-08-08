@@ -56,9 +56,9 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-  const sectionRef  = useRef<HTMLElement>(null);
-  const trackRef    = useRef<HTMLDivElement>(null);
-  const headingRef  = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
 
   useEffect(() => {
@@ -83,7 +83,7 @@ export default function Testimonials() {
     return () => clearInterval(timer);
   }, []);
 
-  const avatarColors = ['bg-blue-600','bg-purple-600','bg-green-600','bg-orange-600','bg-teal-600'];
+  const avatarColors = ['bg-blue-600', 'bg-purple-600', 'bg-green-600', 'bg-orange-600', 'bg-teal-600'];
 
   return (
     <section ref={sectionRef} className="py-24 px-6 bg-white dark:bg-gray-950 overflow-hidden">
@@ -123,9 +123,10 @@ export default function Testimonials() {
 
           {/* Dots */}
           <div className="relative z-10 flex gap-2 mt-6">
-            {testimonials.map((_, i) => (
+            {testimonials.map((t, i) => (
               <button
-                key={i}
+                type="button"
+                key={t.name}
                 onClick={() => setActive(i)}
                 className={`h-2 rounded-full transition-all duration-300 ${i === active ? 'w-8 bg-white' : 'w-2 bg-white/40'}`}
               />
@@ -137,13 +138,13 @@ export default function Testimonials() {
         <div ref={trackRef} className="grid grid-cols-2 md:grid-cols-5 gap-3">
           {testimonials.map((t, i) => (
             <button
+              type="button"
               key={t.name}
               onClick={() => setActive(i)}
-              className={`text-left p-4 rounded-2xl border transition-all duration-300 ${
-                i === active
+              className={`text-left p-4 rounded-2xl border transition-all duration-300 ${i === active
                   ? 'border-blue-500 bg-blue-50 dark:bg-blue-950/50 shadow-md'
                   : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-blue-300'
-              }`}
+                }`}
             >
               <div className={`w-8 h-8 rounded-lg ${avatarColors[i]} flex items-center justify-center text-white text-xs font-bold mb-2`}>
                 {t.avatar}

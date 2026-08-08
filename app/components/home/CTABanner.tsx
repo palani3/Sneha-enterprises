@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function CTABanner() {
   const sectionRef = useRef<HTMLElement>(null);
-  const bgRef      = useRef<HTMLDivElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -58,12 +58,12 @@ export default function CTABanner() {
         className="relative z-10 mx-auto flex max-w-4xl flex-col items-center gap-8 text-center text-white"
       >
         <span className="inline-flex items-center gap-2 rounded-full border border-sky-700/60 bg-sky-900/40 px-5 py-2 text-sm font-semibold text-sky-400">
-          <span className="h-2 w-2 rounded-full bg-sky-400 animate-pulse" />
+          <span className="h-2 w-2 rounded-full bg-sky-400 animate-pulse" />{' '}
           Available 24/7 for Emergency Service
         </span>
 
         <h2 className="text-4xl font-black leading-tight md:text-5xl lg:text-6xl">
-          Ready for Perfect
+          Ready for Perfect{' '}
           <span className="block bg-gradient-to-r from-sky-300 to-cyan-400 bg-clip-text text-transparent">
             Comfort?
           </span>
@@ -77,8 +77,8 @@ export default function CTABanner() {
         <div className="grid w-full max-w-3xl gap-4 sm:grid-cols-3">
           {[
             // { icon: '📞', title: 'Call Us Now',  sub: '+91 98802 83130', href: 'tel:+919880283130',                          bg: 'bg-sky-500/20 border-sky-500/40' },
-            { icon: '💬', title: 'WhatsApp',     sub: 'Quick Response',   href: 'https://wa.me/919880283130',                 bg: 'bg-green-500/20 border-green-500/40' },
-            { icon: '📧', title: 'Email Us',     sub: 'Sales@sneha-enterprises.com', href: 'mailto:Sales@sneha-enterprises.com', bg: 'bg-white/10 border-white/20' },
+            { icon: '💬', title: 'WhatsApp', sub: 'Quick Response', href: 'https://wa.me/919880283130', bg: 'bg-green-500/20 border-green-500/40' },
+            { icon: '📧', title: 'Email Us', sub: 'Sales@sneha-enterprises.com', href: 'mailto:Sales@sneha-enterprises.com', bg: 'bg-white/10 border-white/20' },
           ].map((a) => (
             <a
               key={a.title}
