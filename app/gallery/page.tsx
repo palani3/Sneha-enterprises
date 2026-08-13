@@ -70,15 +70,12 @@ const items: GalleryItem[] = [
   /* ── New Project Photos ── */
   { id: 68, src: '/img/gallry/newpic/15.webp', label: 'Outdoor Units', cat: 'Projects' },
   { id: 72, src: '/img/gallry/newpic/19.webp', label: 'Ducting', cat: 'Projects', span: 'tall' },
-  { id: 75, src: '/img/gallry/newpic/22.jpeg', label: 'Commercial Setup', cat: 'Commercial' },
   { id: 84, src: '/img/gallry/newpic/31.jpeg', label: 'Installation Detail', cat: 'Installations' },
   { id: 86, src: '/img/gallry/newpic/33.jpeg', label: 'Commercial Cooling', cat: 'Commercial' },
   { id: 87, src: '/img/gallry/newpic/34.jpeg', label: 'Project Handover', cat: 'Projects', span: 'wide' },
-  { id: 98, src: '/img/gallry/newpic/45.jpeg', label: 'Round diffuser', cat: 'Installations', span: 'tall' },
   { id: 102, src: '/img/gallry/newpic/49.jpeg', label: 'HVAC Detail', cat: 'Projects' },
   { id: 103, src: '/img/gallry/newpic/50.jpeg', label: 'Round diffuser', cat: 'Installations', span: 'wide' },
   { id: 104, src: '/img/gallry/newpic/51.jpeg', label: 'Final Setup', cat: 'Projects' },
-  { id: 105, src: '/img/gallry/newpic/52.jpeg', label: 'System Handover', cat: 'Commercial', span: 'tall' },
 
   /* ── New additions ── */
   { id: 106, src: '/img/gallry/new3.png', label: 'Cassette AC with Ducting', cat: 'Installations', span: 'wide' },
@@ -144,12 +141,6 @@ function GalleryCard({ item, index, onClick }: Readonly<{
           <ZoomIn className="h-3.5 w-3.5 text-white" strokeWidth={2} />
           <span className="text-[11px] font-bold text-white">View</span>
         </div>
-      </div>
-
-      {/* Bottom label — slides up on hover */}
-      <div className="absolute inset-x-0 bottom-0 p-4 translate-y-1 transition-transform duration-300 group-hover:translate-y-0">
-        <p className="text-[9px] font-black uppercase tracking-widest text-white/55 mb-0.5">{item.cat}</p>
-        <p className="text-sm font-bold text-white leading-tight">{item.label}</p>
       </div>
     </button>
   );
@@ -387,12 +378,7 @@ export default function GalleryPage() {
               />
             </div>
 
-            {/* Caption bar */}
-            <div className="flex items-center justify-between bg-slate-950/90 px-5 py-3 backdrop-blur-sm">
-              <div>
-                <p className="text-[10px] font-black uppercase tracking-widest text-sky-400">{lbItem.cat}</p>
-                <p className="text-sm font-bold text-white">{lbItem.label}</p>
-              </div>
+            <div className="flex items-center justify-end bg-slate-950/90 px-5 py-3 backdrop-blur-sm">
               <span className="text-xs text-white/35">
                 {lightbox.index + 1} / {lightbox.filteredList.length}
               </span>
