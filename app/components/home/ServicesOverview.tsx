@@ -20,7 +20,7 @@ const SERVICES = [
   {
     id: 'ac-installation',
     num: '01',
-    img: '/img/ourservices/ACInstallation.webp',
+    img: '/img/ourservices/ACInstallation1.webp',
     accentColor: '#38bdf8',
     accentDark: '#0ea5e9',
     glowColor: 'rgba(56,189,248,0.35)',
@@ -35,7 +35,7 @@ const SERVICES = [
   {
     id: 'service-maintenance',
     num: '02',
-    img: '/img/ourservices/ServiceMaintenance.webp',
+    img: '/img/ourservices/ServiceMaintenance1.webp',
     accentColor: '#34d399',
     accentDark: '#10b981',
     glowColor: 'rgba(52,211,153,0.35)',

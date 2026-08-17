@@ -169,9 +169,9 @@ const SECTORS = [
   },
   {
     key: 'Builder' as Sector,
-    label: 'Builders & Developers',
+    label: 'Architect',
     sublabel: 'Trusted by leading real-estate developers and workspace providers across Bangalore',
-    icon: HardHat,
+    icon: Building2,
     color: '#f59e0b',
   },
 ] as const;

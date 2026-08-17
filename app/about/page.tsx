@@ -49,12 +49,12 @@ const teamRows = [
 ];
 
 const sectors = [
-  { icon: Building2, label: 'Corporates' },
+  { icon: Building2, label: 'Corporate & Tech' },
   { icon: HeartPulse, label: 'Hospitals' },
   { icon: Hotel, label: 'Hotels' },
   { icon: GraduationCap, label: 'Institutions' },
   { icon: Factory, label: 'Industries' },
-  { icon: HardHat, label: 'Builders' },
+  { icon: Building2, label: 'Builders' },
 ];
 
 /* ─── Page ───────────────────────────────────────────────── */
