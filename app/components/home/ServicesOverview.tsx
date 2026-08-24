@@ -80,7 +80,7 @@ const SERVICES = [
   {
     id: 'sales-marketing',
     num: '05',
-    img: '/img/ourservices/Sales.webp',
+    img: '/img/ourservices/Sales2.webp',
     accentColor: '#22d3ee',
     accentDark: '#06b6d4',
     glowColor: 'rgba(34,211,238,0.35)',
@@ -95,7 +95,7 @@ const SERVICES = [
   {
     id: 'customer-care',
     num: '06',
-    img: '/img/ourservices/customer care.webp',
+    img: '/img/ourservices/customer care1.webp',
     accentColor: '#fb7185',
     accentDark: '#f43f5e',
     glowColor: 'rgba(251,113,133,0.35)',

@@ -169,7 +169,7 @@ const SECTORS = [
   },
   {
     key: 'Builder' as Sector,
-    label: 'Architect',
+    label: 'Architect, Builders & Developers',
     sublabel: 'Trusted by leading real-estate developers and workspace providers across Bangalore',
     icon: Building2,
     color: '#f59e0b',
