@@ -5,7 +5,7 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
-  ArrowRight, Phone, Check,
+  ArrowRight, Phone, Check, Mail,
   Clock, Shield, BadgeCheck, Award, ThumbsUp,
   Headphones, Zap, Snowflake, Wrench, FileText, Sparkles, Wind,
   UserCheck, Plug, Gauge, Play, Layers, Package, ClipboardCheck,
@@ -33,12 +33,47 @@ const services = [
     ctaLabel: 'Explore Models',
     accent: 'sky',
   },
+  
+  {
+    id: 'ac-repair',
+    title: 'AC Repair',
+    tagline: 'Fast & Reliable Repair Service',
+    Icon: Zap,
+    image: '/img/ourservices/AC_Repair3.webp',
+    badge: 'Same Day',
+    badgeColor: 'bg-orange-100 text-orange-800',
+    rating: 4.7,
+    reviews: '2.1k',
+    desc: 'All Blue Star model support — compressor, PCB, gas leaks, fan motor, remote faults. Genuine parts with transparent diagnosis report.',
+    features: ['All Blue Star models supported', 'Genuine spare parts', 'Same-day service', 'Transparent diagnosis report', 'Parts warranty included', 'All major brand service is carried out'],
+    ctaLink: '/contact',
+    ctaLabel: 'Book Repair',
+    accent: 'orange',
+    serviceContact: { email: 'services@sneha-enterprises.com', phone: '9880283126' },
+  },
+  {
+    id: 'amc',
+    title: 'Annual Maintenance Contract',
+    tagline: 'Year-Round Peace of Mind',
+    Icon: FileText,
+    image: '/img/ourservices/Annual_Maintenance3.webp',
+    badge: 'Best Value',
+    badgeColor: 'bg-blue-100 text-blue-800',
+    rating: 4.9,
+    reviews: '650',
+    desc: 'Scheduled servicing twice yearly, priority breakdown support, parts discounts and a dedicated service manager for complete peace of mind.',
+    features: [ 'Priority breakdown response', 'Annual performance report', 'Dedicated service manager'],
+    ctaLink: '/contact',
+    ctaLabel: 'Get AMC Plan',
+    accent: 'emerald',
+    serviceContact: { email: 'services@sneha-enterprises.com', phone: '9880283126' },
+  },
   {
     id: 'ac-installation',
     title: 'AC Installation',
     tagline: 'Certified Installation Experts',
     Icon: Wrench,
-    image: '/img/ourservices/ACInstallation1.webp',
+    image: '/img/ourservices/AC_Installation3.webp',
     badge: 'Most Trusted',
     badgeColor: 'bg-emerald-100 text-emerald-800',
     rating: 4.8,
@@ -50,43 +85,11 @@ const services = [
     accent: 'cyan',
   },
   {
-    id: 'ac-repair',
-    title: 'AC Repair',
-    tagline: 'Fast & Reliable Repair Service',
-    Icon: Zap,
-    image: '/img/ourservices/AC_repair_photo1.webp',
-    badge: 'Same Day',
-    badgeColor: 'bg-orange-100 text-orange-800',
-    rating: 4.7,
-    reviews: '2.1k',
-    desc: 'All Blue Star model support — compressor, PCB, gas leaks, fan motor, remote faults. Genuine parts with transparent diagnosis report.',
-    features: ['All Blue Star models supported', 'Genuine spare parts', 'Same-day service', 'Transparent diagnosis report', 'Parts warranty included', 'All major brand service is carried out'],
-    ctaLink: '/contact',
-    ctaLabel: 'Book Repair',
-    accent: 'orange',
-  },
-  {
-    id: 'amc',
-    title: 'Annual Maintenance Contract',
-    tagline: 'Year-Round Peace of Mind',
-    Icon: FileText,
-    image: '/img/ourservices/AC_anual_photo1.webp',
-    badge: 'Best Value',
-    badgeColor: 'bg-blue-100 text-blue-800',
-    rating: 4.9,
-    reviews: '650',
-    desc: 'Scheduled servicing twice yearly, priority breakdown support, parts discounts and a dedicated service manager for complete peace of mind.',
-    features: ['2 services per year', 'Priority breakdown response', 'Annual performance report', 'Dedicated service manager'],
-    ctaLink: '/contact',
-    ctaLabel: 'Get AMC Plan',
-    accent: 'emerald',
-  },
-  {
     id: 'deep-cleaning',
     title: 'Deep Cleaning',
     tagline: 'Restore Cooling Efficiency',
     Icon: Sparkles,
-    image: '/img/ourservices/AC_deep_clean_photo1.webp',
+    image: '/img/ourservices/Deep_Cleaning3.webp',
     badge: 'Recommended',
     badgeColor: 'bg-violet-100 text-violet-800',
     rating: 4.8,
@@ -96,13 +99,14 @@ const services = [
     ctaLink: '/contact',
     ctaLabel: 'Book Cleaning',
     accent: 'violet',
+    serviceContact: { email: 'services@sneha-enterprises.com', phone: '9880283126' },
   },
   {
     id: 'gas-refilling',
     title: 'Gas Refilling',
     tagline: 'Accurate Refrigerant Charging',
     Icon: Wind,
-    image: '/img/ourservices/AC_gas_photo2.webp',
+    image: '/img/ourservices/Gas_Refilling3.webp',
     badge: 'Specialized',
     badgeColor: 'bg-teal-100 text-teal-800',
     rating: 4.7,
@@ -112,6 +116,7 @@ const services = [
     ctaLink: '/contact',
     ctaLabel: 'Book Gas Fill',
     accent: 'teal',
+    serviceContact: { email: 'services@sneha-enterprises.com', phone: '9880283126' },
   },
 ];
 
@@ -200,9 +205,11 @@ function ServiceCard({ s, index }: Readonly<{ s: typeof services[0]; index: numb
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
           priority={index < 2}
-          className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+          className="object-contain object-center transition-transform duration-700 ease-out group-hover:scale-105"
         />
-        <span className={`absolute left-4 top-4 inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold shadow-sm ring-1 ring-black/5 ${s.badgeColor}`}>
+        <span
+          className={`absolute left-4 top-16 z-10 inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold shadow-sm ring-1 ring-black/5 ${s.badgeColor}`}
+        >
           {s.badge}
         </span>
       </div>
@@ -246,13 +253,26 @@ function ServiceCard({ s, index }: Readonly<{ s: typeof services[0]; index: numb
             {s.ctaLabel}
             <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
           </a>
-          <a
-            href="/contact"
-            aria-label={`Call about ${s.title}`}
-            className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border border-slate-200 text-slate-400 transition-all hover:border-sky-300 hover:text-sky-500 dark:border-slate-700 dark:hover:border-sky-700"
-          >
-            <Phone className="h-4 w-4" />
-          </a>
+
+          {"serviceContact" in s && s.serviceContact && (
+            <>
+              <a
+                href={`tel:${s.serviceContact.phone}`}
+                aria-label={`Call about ${s.title}`}
+                className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border border-slate-200 text-slate-400 transition-all hover:border-sky-300 hover:text-sky-500 dark:border-slate-700 dark:hover:border-sky-700"
+              >
+                <Phone className="h-4 w-4" />
+              </a>
+
+              <a
+                href={`mailto:${s.serviceContact.email}`}
+                aria-label={`Email about ${s.title}`}
+                className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border border-slate-200 text-slate-400 transition-all hover:border-sky-300 hover:text-sky-500 dark:border-slate-700 dark:hover:border-sky-700"
+              >
+                <Mail className="h-4 w-4" />
+              </a>
+            </>
+          )}
         </div>
       </div>
     </div>
