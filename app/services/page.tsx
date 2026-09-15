@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
@@ -32,8 +33,9 @@ const services = [
     ctaLink: '/products',
     ctaLabel: 'Explore Models',
     accent: 'sky',
+    serviceContact: { email: 'Sales@sneha-enterprises.com', phone: '8792263737' },
   },
-  
+
   {
     id: 'ac-repair',
     title: 'AC Repair',
@@ -62,7 +64,7 @@ const services = [
     rating: 4.9,
     reviews: '650',
     desc: 'Scheduled servicing twice yearly, priority breakdown support, parts discounts and a dedicated service manager for complete peace of mind.',
-    features: [ 'Priority breakdown response', 'Annual performance report', 'Dedicated service manager'],
+    features: ['Priority breakdown response', 'Annual performance report', 'Dedicated service manager'],
     ctaLink: '/contact',
     ctaLabel: 'Get AMC Plan',
     accent: 'emerald',
@@ -246,13 +248,13 @@ function ServiceCard({ s, index }: Readonly<{ s: typeof services[0]; index: numb
 
         {/* CTA */}
         <div className="mt-auto flex items-center gap-3 pt-7">
-          <a
+          <Link
             href={s.ctaLink}
             className={`inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white shadow-md transition-all hover:shadow-lg ${c.btn}`}
           >
             {s.ctaLabel}
             <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-          </a>
+          </Link>
 
           {"serviceContact" in s && s.serviceContact && (
             <>
@@ -341,20 +343,20 @@ export default function ServicesPage() {
           </p>
 
           <div className="h-in mt-8 flex flex-wrap justify-center gap-4">
-            <a
+            <Link
               href="/contact"
               className="inline-flex items-center gap-2 rounded-full bg-sky-500 px-9 py-3.5 text-sm font-bold text-white shadow-xl shadow-sky-500/20 transition-all hover:scale-105 hover:bg-sky-400"
             >
               <Phone className="h-4 w-4" />
               Book a Service
-            </a>
-            <a
+            </Link>
+            <Link
               href="/products"
               className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-9 py-3.5 text-sm font-semibold text-white transition-all hover:bg-white/10"
             >
               View Products
               <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -395,12 +397,12 @@ export default function ServicesPage() {
               <p className="leading-relaxed text-slate-500 dark:text-slate-400">
                 Every service delivered by Blue Star certified technicians using genuine parts — backed by warranty.
               </p>
-              <a
+              <Link
                 href="/contact"
                 className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-sky-500 transition-all hover:gap-3"
               >
                 Book a service <ArrowRight className="h-4 w-4" />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -504,20 +506,20 @@ export default function ServicesPage() {
             Expert technicians at your doorstep — fast response, genuine parts and guaranteed satisfaction.
           </p>
           <div className="relative mt-8 flex flex-wrap justify-center gap-4">
-            <a
+            <Link
               href="/contact"
               className="inline-flex items-center gap-2 rounded-full bg-sky-500 px-9 py-3.5 text-sm font-bold text-white shadow-xl shadow-sky-500/20 transition-all hover:scale-105 hover:bg-sky-400"
             >
               <Phone className="h-4 w-4" />
               Call Now
-            </a>
-            <a
+            </Link>
+            <Link
               href="/contact"
               className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-9 py-3.5 text-sm font-semibold text-white transition-all hover:bg-white/10"
             >
               Book Online
               <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>

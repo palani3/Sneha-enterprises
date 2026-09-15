@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MapPin, Mail, Phone } from 'lucide-react';
+import SocialContactButtons from '@/app/components/SocialContactButtons';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -81,6 +82,8 @@ export default function ContactPage() {
                 <a href="tel:08026760026" className="block text-sm text-slate-700 transition-colors hover:text-sky-600 dark:text-slate-300 dark:hover:text-sky-400">080-26760026/28</a>
               </div>
             </div>
+
+            <SocialContactButtons />
           </div>
 
           {/* Right — Google Map */}
